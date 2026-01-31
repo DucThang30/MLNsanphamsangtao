@@ -19,96 +19,120 @@ interface TimelineEvent {
 }
 
 const DATA_1991: TimelineEvent[] = [
+ const DATA_HE_THONG_LY_LUAN: TimelineEvent[] = [
   {
-    date: 'BỐI CẢNH',
-    title: '1) BỐI CẢNH LỊCH SỬ – CHÍNH TRỊ',
-    content: `**Trong nước**
-Sau 5 năm triển khai đường lối Đổi mới từ Đại hội VI (1986), Việt Nam từng bước thoát khỏi tình trạng khủng hoảng kinh tế – xã hội kéo dài, đặc trưng bởi lạm phát cao, thiếu hụt lương thực và cơ chế quản lý tập trung quan liêu bao cấp. Nền kinh tế bắt đầu hình thành rõ nét cơ cấu kinh tế hàng hóa nhiều thành phần, trong đó kinh tế nhà nước, kinh tế tập thể, kinh tế tư nhân và kinh tế cá thể cùng tồn tại và phát triển trong khuôn khổ quản lý của Nhà nước. Các quan hệ thị trường từng bước được thừa nhận như một công cụ điều tiết sản xuất và phân phối, tạo động lực nâng cao năng suất lao động và thu hút các nguồn lực xã hội. Trong bối cảnh đó, yêu cầu cấp thiết đặt ra là phải chuẩn hóa và hệ thống hóa nhận thức lý luận về chủ nghĩa xã hội và con đường đi lên chủ nghĩa xã hội ở Việt Nam, nhằm bảo đảm quá trình cải cách kinh tế không đi chệch định hướng chính trị – xã hội, đồng thời tạo nền tảng tư tưởng vững chắc cho công cuộc đổi mới lâu dài.
+    date: 'PHẦN 1',
+    title: 'BỐI CẢNH LỊCH SỬ – CHÍNH TRỊ',
+    content: `### Trong nước
+Sau 5 năm triển khai đường lối Đổi mới từ Đại hội VI (1986), Việt Nam từng bước thoát khỏi tình trạng khủng hoảng kinh tế – xã hội kéo dài, đặc trưng bởi lạm phát cao, thiếu hụt lương thực và cơ chế quản lý tập trung quan liêu bao cấp. Nền kinh tế bắt đầu hình thành rõ nét cơ cấu kinh tế hàng hóa nhiều thành phần: nhà nước, tập thể, tư nhân và cá thể cùng tồn tại và phát triển trong khuôn khổ quản lý của Nhà nước. Các quan hệ thị trường từng bước được thừa nhận như một công cụ điều tiết sản xuất và phân phối, tạo động lực nâng cao năng suất lao động và thu hút các nguồn lực xã hội.
 
-**Quốc tế**
-Bước sang đầu thập niên 1990, tình hình thế giới có những biến động sâu sắc, đặc biệt là sự tan rã của hệ thống xã hội chủ nghĩa ở Liên Xô và Đông Âu, kéo theo sự thay đổi căn bản trong tương quan lực lượng quốc tế và trật tự thế giới. Toàn cầu hóa và khu vực hóa kinh tế gia tăng mạnh mẽ, các quốc gia ngày càng phụ thuộc lẫn nhau thông qua thương mại, đầu tư và chuyển giao công nghệ. Đối với Việt Nam, bối cảnh này vừa tạo ra thách thức lớn về an ninh chính trị, định hướng phát triển và vị thế quốc tế, vừa mở ra cơ hội tiếp cận nguồn vốn, khoa học – công nghệ và thị trường toàn cầu. Do đó, yêu cầu đặt ra là phải mở rộng quan hệ đối ngoại, đa phương hóa và đa dạng hóa hợp tác quốc tế, đồng thời kiên định mục tiêu xây dựng chủ nghĩa xã hội phù hợp với điều kiện lịch sử và thực tiễn của đất nước trong môi trường cạnh tranh và hội nhập ngày càng sâu rộng.
+### Quốc tế
+Bước sang đầu thập niên 1990, tình hình thế giới có những biến động sâu sắc, đặc biệt là sự tan rã của hệ thống xã hội chủ nghĩa ở Liên Xô và Đông Âu, kéo theo sự thay đổi căn bản trong tương quan lực lượng quốc tế và trật tự thế giới. Toàn cầu hóa và khu vực hóa kinh tế gia tăng mạnh mẽ. Đối với Việt Nam, bối cảnh này vừa tạo ra thách thức lớn về an ninh chính trị, vừa mở ra cơ hội tiếp cận nguồn vốn, khoa học – công nghệ và thị trường toàn cầu thông qua đa phương hóa, đa dạng hóa hợp tác quốc tế.
 
-**Sự kiện mốc: Đại hội VII (6/1991)**
-Trong bối cảnh trong nước đang chuyển mình mạnh mẽ và môi trường quốc tế biến động sâu sắc, Đại hội đại biểu toàn quốc lần thứ VII của Đảng Cộng sản Việt Nam (tháng 6 năm 1991) đã trở thành dấu mốc lý luận và chính trị quan trọng. Đại hội thông qua Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội, lần đầu tiên xác định một cách hệ thống và tương đối hoàn chỉnh mô hình chủ nghĩa xã hội Việt Nam bằng sáu đặc trưng cơ bản, chuyển nhận thức từ mức độ định hướng, định tính sang trình độ định hình rõ ràng về mục tiêu, nội dung và phương thức phát triển. Cương lĩnh không chỉ khẳng định vai trò làm chủ của nhân dân và mục tiêu phát triển con người toàn diện, mà còn nhấn mạnh sự kết hợp giữa phát triển kinh tế, xây dựng văn hóa, củng cố quốc phòng – an ninh và mở rộng quan hệ đối ngoại hòa bình, hợp tác. Từ đó, văn kiện này trở thành nền tảng tư tưởng – chiến lược định hướng cho toàn bộ quá trình phát triển đất nước trong giai đoạn mới.`,
+### Sự kiện mốc: Đại hội VII (6/1991)
+Đại hội đại biểu toàn quốc lần thứ VII đã thông qua **Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội**. Đây là dấu mốc lý luận quan trọng, lần đầu tiên xác định hệ thống mô hình CNXH Việt Nam bằng sáu đặc trưng cơ bản, chuyển nhận thức từ định tính sang định hình rõ ràng về mục tiêu và phương thức phát triển.`,
     media: [
-      { 
+       { 
         type: 'image', 
-        src: 'https://dangcongsan.vn/DATA/0/2018/12/28/Dangcongsan/vhoai%20_3_16_22_800.jpg', 
-        caption: 'Đại hội Đảng toàn quốc lần thứ VII (1991)' 
+        src: 'https://file3.qdnd.vn/data/images/0/2025/01/30/upload_2105/1.jpg', 
+        caption: 'Đại hội đảng lần thứ VII' 
       }
     ]
   },
   {
-    date: 'LÝ LUẬN',
-    title: '2) PHẦN LÝ LUẬN (TỪ GIÁO TRÌNH CNXHKH & CƯƠNG LĨNH)',
-    content: `**2.1. Khái niệm "Quá độ gián tiếp"**
-"Quá độ gián tiếp" là con đường đi lên chủ nghĩa xã hội của Việt Nam từ một xã hội nông nghiệp lạc hậu, chưa trải qua giai đoạn phát triển tư bản chủ nghĩa đầy đủ, thông qua việc tiếp thu có chọn lọc những thành tựu của nền kinh tế thị trường hiện đại và văn minh nhân loại để phát triển lực lượng sản xuất. Về bản chất, đây không phải là sự phủ định vai trò của thị trường, mà là việc sử dụng thị trường như một công cụ kinh tế trong khuôn khổ định hướng xã hội chủ nghĩa, dưới sự quản lý của Nhà nước, nhằm rút ngắn quá trình công nghiệp hóa, hiện đại hóa và tạo nền tảng vật chất cho xã hội mới. Quá độ gián tiếp thể hiện tính sáng tạo của cách mạng Việt Nam khi kết hợp giữa mục tiêu xã hội chủ nghĩa với điều kiện lịch sử cụ thể của một quốc gia đi lên từ điểm xuất phát thấp, trong bối cảnh hội nhập và toàn cầu hóa.
+    date: 'PHẦN 2',
+    title: 'PHẦN LÝ LUẬN (TỪ GIÁO TRÌNH CNXHKH & CƯƠNG LĨNH)',
+    content: `### 2.1. Khái niệm “Quá độ gián tiếp”
+Là con đường đi lên CNXH từ một xã hội nông nghiệp lạc hậu, chưa trải qua giai đoạn phát triển tư bản chủ nghĩa đầy đủ, thông qua việc tiếp thu có chọn lọc những thành tựu của văn minh nhân loại để phát triển lực lượng sản xuất. 
+* **Hàm ý:** Không “nhảy cóc” kỹ thuật – quản trị; sử dụng cơ chế thị trường như công cụ dưới định hướng XHCN để rút ngắn thời gian công nghiệp hóa.
 
-**2.2. Đặc điểm thời kỳ quá độ**
-Thời kỳ quá độ ở Việt Nam mang đặc trưng của sự đan xen, tồn tại song song và tác động lẫn nhau giữa nhiều hình thức sở hữu và nhiều thành phần kinh tế, bao gồm kinh tế nhà nước, kinh tế tập thể, kinh tế tư nhân, kinh tế cá thể và kinh tế có vốn đầu tư nước ngoài. Trong giai đoạn này, lực lượng sản xuất chưa phát triển đồng đều, trong khi quan hệ sản xuất đang từng bước được cải biến để phù hợp với trình độ phát triển mới của nền kinh tế. Nhà nước giữ vai trò định hướng, điều tiết và dẫnắt sự phát triển thông qua hệ thống pháp luật, chính sách và chiến lược phát triển quốc gia, nhằm bảo đảm mục tiêu tăng trưởng kinh tế gắn liền với tiến bộ và công bằng xã hội. Đặc điểm nổi bật của thời kỳ này là sự vận động vừa cải cách kinh tế, vừa ổn định chính trị – xã hội, tạo nền tảng vững chắc cho việc xây dựng xã hội xã hội chủ nghĩa trong dài hạn.
+### 2.2. Đặc điểm thời kỳ quá độ
+Sự đan xen, tồn tại song song nhiều hình thức sở hữu và thành phần kinh tế (nhà nước, tập thể, tư nhân, cá thể, FDI). Lực lượng sản xuất chưa phát triển đồng đều, quan hệ sản xuất được cải biến từng bước. Nhà nước giữ vai trò định hướng, điều tiết nhằm bảo đảm mục tiêu tăng trưởng gắn liền với tiến bộ và công bằng xã hội.
 
-**2.3. Mục tiêu chiến lược**
-Mục tiêu chiến lược của thời kỳ quá độ là xây dựng cơ sở vật chất – kỹ thuật của chủ nghĩa xã hội thông qua quá trình công nghiệp hóa, hiện đại hóa đất nước gắn với phát triển khoa học, công nghệ và nguồn nhân lực chất lượng cao. Song song với đó là từng bước hoàn thiện quan hệ sản xuất mới phù hợp với trình độ phát triển của lực lượng sản xuất, bảo đảm nguyên tắc phân phối theo lao động và hiệu quả kinh tế, đồng thời thực hiện các chính sách xã hội nhằm nâng cao đời sống vật chất và tinh thần của nhân dân. Mục tiêu này không chỉ hướng tới tăng trưởng kinh tế thuần túy, mà còn nhấn mạnh sự phát triển toàn diện của con người, xây dựng nền dân chủ xã hội chủ nghĩa và củng cố vai trò quản lý của Nhà nước pháp quyền, qua đó tạo nền tảng cho sự phát triển bền vững và lâu dài của đất nước.
+### 2.3. Mục tiêu chiến lược
+Xây dựng cơ sở vật chất – kỹ thuật của CNXH thông qua công nghiệp hóa, hiện đại hóa gắn với KH-CN và nhân lực chất lượng cao. Từng bước hoàn thiện quan hệ sản xuất mới phù hợp lực lượng sản xuất, bảo đảm nguyên tắc phân phối theo lao động và hiệu quả.
 
-**2.4. Sáu đặc trưng của CNXH Việt Nam (Cương lĩnh 1991)**
-Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên chủ nghĩa xã hội năm 1991 đã xác định rõ mô hình xã hội xã hội chủ nghĩa ở Việt Nam với sáu đặc trưng cơ bản:
-1) Do nhân dân lao động làm chủ; 
-2) Có một nền kinh tế phát triển cao dựa trên lực lượng sản xuất hiện đại và chế độ công hữu về các tư liệu sản xuất chủ yếu; 
-3) Có nền văn hóa tiên tiến, đậm đà bản sắc dân tộc; 
-4) Con người được giải phóng khỏi áp bức, bóc lột, bất công, làm theo năng lực, hưởng theo lao động, có cuộc sống ấm no, tự do, hạnh phúc, có điều kiện phát triển toàn diện cá nhân; 
-5) Các dân tộc trong nước bình đẳng, đoàn kết và giúp đỡ lẫn nhau cùng tiến bộ; 
+### 2.4. Sáu đặc trưng của CNXH Việt Nam (Cương lĩnh 1991)
+1) Do nhân dân lao động làm chủ.
+2) Có nền kinh tế phát triển cao dựa trên LLSX hiện đại và chế độ công hữu về các TLSX chủ yếu.
+3) Có nền văn hóa tiên tiến, đậm đà bản sắc dân tộc.
+4) Con người được giải phóng khỏi áp bức, bất công, có cuộc sống ấm no, tự do, hạnh phúc.
+5) Các dân tộc trong nước bình đẳng, đoàn kết và giúp đỡ lẫn nhau cùng tiến bộ.
 6) Có quan hệ hữu nghị và hợp tác với nhân dân tất cả các nước trên thế giới.`,
     media: [
-      { 
+       { 
         type: 'image', 
-        src: 'https://media.baodautu.vn/Images/chicuong/2021/06/27/cuong-linh-1991-1.jpg', 
-        caption: 'Cương lĩnh xây dựng đất nước 1991' 
+        src: 'https://btgdvtukhanhhoa.vn/Media/Articles/110225100420/daihoidaibieutoanquoclanthuviicuadangdoimoitoandienduadatnuoctienlenconduongxhcn1121582810202110022025083322.jpg', 
+        caption: 'Nguyên văn Cương lĩnh xây dựng đất nước trong thời kỳ quá độ (1991)' 
       }
     ]
   },
   {
-    date: 'THỰC TIỄN',
-    title: '3) PHẦN THỰC TIỄN – DẪN CHỨNG LỊCH SỬ & XÃ HỘI',
-    content: `**3.1. Chuỗi sự kiện tạo nền cho Cương lĩnh 1991**
-1954–1957: Khôi phục kinh tế miền Bắc sau chiến tranh. Từ sau Hiệp định Giơ-ne-vơ năm 1954, miền Bắc Việt Nam bước vào giai đoạn khôi phục kinh tế và xây dựng những cơ sở đầu tiên của nền sản xuất xã hội chủ nghĩa.
-1960: Đại hội III xác định xây dựng CNXH ở miền Bắc. Đại hội III của Đảng (1960) xác định rõ nhiệm vụ xây dựng CNXH ở miền Bắc như một hậu phương chiến lược cho sự nghiệp thống nhất đất nước, đặt trọng tâm vào phát triển công nghiệp nặng, hợp tác hóa nông nghiệp và xây dựng cơ sở vật chất – kỹ thuật.
-1986: Đổi mới (Đại hội VI) – chuyển sang kinh tế hàng hóa nhiều thành phần. Đại hội VI (1986) với đường lối Đổi mới, chuyển sang phát triển nền kinh tế hàng hóa nhiều thành phần vận hành theo cơ chế thị trường có sự quản lý của Nhà nước.
-1991: Đại hội VII – Cương lĩnh 1991 – định hình mô hình CNXH Việt Nam. Đại hội VII (1991) đã thông qua Cương lĩnh xây dựng đất nước trong thời kỳ quá độ lên CNXH, đánh dấu sự chuyển từ nhận thức định hướng sang định hình mô hình phát triển một cách hệ thống và lâu dài.
+    date: 'PHẦN 3',
+    title: 'PHẦN THỰC TIỄN – DẪN CHỨNG LỊCH SỬ & XÃ HỘI',
+    content: `### 3.1. Chuỗi sự kiện tạo nền cho Cương lĩnh 1991
+- **1954–1957:** Khôi phục kinh tế miền Bắc sau chiến tranh.
+- **1960:** Đại hội III xác định xây dựng CNXH ở miền Bắc là hậu phương chiến lược, trọng tâm là công nghiệp nặng và hợp tác hóa nông nghiệp.
+- **1986:** Đại hội VI Đổi mới, chuyển sang kinh tế hàng hóa nhiều thành phần.
+- **1991:** Đại hội VII thông qua Cương lĩnh định hình mô hình phát triển hệ thống và lâu dài.
 
-**3.2. Phong trào – mô hình tiêu biểu (minh họa thực hành lý luận)**
-Thi đua xã hội: "Ba sẵn sàng", "Năm xung phong".
-Hợp tác xã kiểu mẫu: "Gió Đại Phong", "Sóng Duyên Hải".
-Trong quá trình xây dựng CNXH, nhiều phong trào quần chúng và mô hình sản xuất tiêu biểu đã trở thành minh chứng sinh động cho nguyên lý "nhân dân lao động làm chủ" và vai trò của kinh tế tập thể. Các phong trào thi đua như "Ba sẵn sàng" của thanh niên và "Năm xung phong" của phụ nữ trong những năm 1960–1970 không chỉ mang ý nghĩa chính trị – xã hội mà còn trực tiếp đóng góp vào sản xuất, quốc phòng và phát triển cộng đồng.
+### 3.2. Phong trào – mô hình tiêu biểu
+- **Thi đua xã hội:** “Ba sẵn sàng”, “Năm xung phong” (1960-1970).
+- **Hợp tác xã kiểu mẫu:** “Gió Đại Phong” (Quảng Bình), “Sóng Duyên Hải” (Thái Bình).
+Minh chứng cho tinh thần nhân dân làm chủ và vai trò của kinh tế tập thể. Các chuyến thăm của Hồ Chí Minh tại Gang thép Thái Nguyên, Thủy điện Thác Bà lan tỏa tinh thần thi đua lao động sản xuất.
 
-**3.3. Kết quả giai đoạn đầu Đổi mới (đến 1991)**
-Sau 5 năm triển khai đường lối Đổi mới, Việt Nam đạt được những kết quả bước đầu quan trọng, tạo tiền đề trực tiếp cho việc hình thành Cương lĩnh 1991. Nền kinh tế thoát dần tình trạng khủng hoảng kéo dài, lạm phát được kiềm chế từng bước, sản xuất nông nghiệp tăng trưởng rõ rệt, đặc biệt là nhờ khoán trong nông nghiệp giúp Việt Nam từ nước thiếu lương thực trở thành nước xuất khẩu gạo.`,
-    media: []
+### 3.3. Kết quả giai đoạn đầu Đổi mới (đến 1991)
+Việt Nam thoát dần khủng hoảng, kiềm chế lạm phát, từ nước thiếu lương thực trở thành nước xuất khẩu gạo. Hình thành thị trường hàng hóa – lao động sơ khai và mở rộng đối ngoại đa phương hóa, phá thế bao vây cô lập. Những thành tựu này củng cố cơ sở thực tiễn để Đảng xác lập mô hình CNXH năm 1991.`,
+    media: [
+      { 
+        type: 'image', 
+        src: 'https://phapluat.tuoitrethudo.vn/stores/news_dataimages/nguyentuananh/032021/17/09/5714-ba-san-sang-220210317090110.4251730.jpg', 
+        caption: 'Thanh niên Thủ đô hăng hái hưởng ứng phong trào "Ba sẵn sàng"' 
+      }
+    ]
   },
   {
-    date: 'PHÂN TÍCH',
-    title: '4) PHÂN TÍCH HỆ THỐNG (LÝ LUẬN ↔ THỰC TIỄN)',
-    content: `**Tính nhất quán:** Quá độ gián tiếp → dùng thị trường để phát triển lực lượng sản xuất → Nhà nước định hướng XHCN.
-Quá độ gián tiếp, như được xác lập trong Cương lĩnh năm 1991, thể hiện sự lựa chọn mang tính hệ thống của Việt Nam khi sử dụng cơ chế thị trường như một công cụ phát triển lực lượng sản xuất, chứ không như một mô hình chính trị – xã hội thay thế cho định hướng xã hội chủ nghĩa. Về mặt lý luận, điều này phù hợp với quan điểm của chủ nghĩa Mác – Lênin về vai trò quyết định của lực lượng sản xuất đối với sự vận động và biến đổi của quan hệ sản xuất.
+    date: 'PHẦN 4',
+    title: 'PHÂN TÍCH HỆ THỐNG (LÝ LUẬN ↔ THỰC TIỄN)',
+    content: `### Tính nhất quán
+Quá độ gián tiếp thể hiện việc sử dụng cơ chế thị trường như một công cụ phát triển lực lượng sản xuất, không phải mô hình thay thế cho định hướng XHCN. Điều này phù hợp với quan điểm Marxist về vai trò quyết định của LLSX đối với QHSX.
 
-**Tính khả thi:** Đa thành phần kinh tế tạo động lực tăng trưởng; công hữu "chủ yếu" giữ vai trò dẫn dắt ở lĩnh vực then chốt.
-Việc thừa nhận và phát triển đa thành phần kinh tế đã chứng minh tính khả thi của mô hình quá độ gián tiếp trong điều kiện một nước đang phát triển. Khu vực kinh tế tư nhân và đầu tư nước ngoài trở thành động lực quan trọng thúc đẩy tăng trưởng, tạo việc làm và nâng cao năng suất lao động, trong khi khu vực kinh tế nhà nước và tập thể giữ vai trò dẫn dắt ở các lĩnh vực then chốt như năng lượng, hạ tầng, tài chính – tín dụng và các ngành có ảnh hưởng lớn đến an ninh kinh tế quốc gia.
+### Tính khả thi
+Đa thành phần kinh tế tạo động lực tăng trưởng. Khu vực tư nhân và FDI thúc đẩy năng suất, trong khi kinh tế Nhà nước giữ vai trò dẫn dắt ở các lĩnh vực “điểm tựa chiến lược” (năng lượng, hạ tầng, tài chính). Sự kết hợp này giúp Việt Nam vừa linh hoạt với thị trường, vừa duy trì khả năng điều tiết vĩ mô.
 
-**Thách thức:** Cân bằng hiệu quả thị trường và công bằng xã hội; quản trị nhà nước, tham nhũng, chênh lệch vùng miền.
-Dù đạt được nhiều kết quả tích cực, mô hình phát triển dựa trên sự kết hợp giữa thị trường và định hướng xã hội chủ nghĩa cũng bộc lộ những mâu thuẫn nội tại. Một mặt, cơ chế thị trường thúc đẩy cạnh tranh và tối ưu hóa nguồn lực, nhưng mặt khác lại có xu hướng tạo ra phân hóa giàu nghèo và chênh lệch phát triển giữa các vùng, các nhóm xã hội.`,
-    media: []
+### Thách thức
+Mâu thuẫn giữa hiệu quả thị trường và công bằng xã hội (phân hóa giàu nghèo, chênh lệch vùng miền). Quá trình mở rộng quyền tự chủ nếu thiếu giám sát minh bạch sẽ gia tăng nguy cơ tham nhũng, lợi ích nhóm. Đây chính là điểm căng thẳng đòi hỏi cải cách thể chế và xây dựng văn hóa pháp quyền để phát triển bền vững.`,
+    media: [
+      { 
+        type: 'image', 
+        src: 'https://i.ex-cdn.com/phapluatphattrien.vn/files/content/2025/04/04/085100084831vidan1-0703.jpg', 
+        caption: 'Hạ tầng cảng biển hiện đại – minh chứng cho tính dẫn dắt của kinh tế nhà nước' 
+      }
+    ]
   },
   {
-    date: 'TẦM NHÌN',
-    title: '5) DỰ BÁO & HÀM Ý CHIẾN LƯỢC (1–30 NĂM)',
-    content: `**Ngắn hạn (1–5 năm):** Hoàn thiện thể chế thị trường định hướng XHCN; chuyển đổi số quản trị công.
-Trong giai đoạn ngắn hạn, trọng tâm chiến lược của Việt Nam là hoàn thiện thể chế kinh tế thị trường định hướng xã hội chủ nghĩa nhằm bảo đảm sự vận hành thông suốt, minh bạch và công bằng giữa các thành phần kinh tế. Điều này bao gồm việc tiếp tục cải cách hệ thống pháp luật về đất đai, đầu tư, doanh nghiệp và cạnh tranh để vừa khuyến khích sáng tạo, tích lũy tư bản xã hội, vừa giữ vững vai trò điều tiết của Nhà nước đối với các lĩnh vực then chốt.
+    date: 'PHẦN 5',
+    title: 'DỰ BÁO & HÀM Ý CHIẾN LƯỢC (1–30 NĂM)',
+    content: `### Ngắn hạn (1–5 năm)
+Hoàn thiện thể chế kinh tế thị trường định hướng XHCN; chuyển đổi số quản trị công nhằm nâng cao hiệu lực bộ máy, giảm chi phí giao dịch và hạn chế tham nhũng.
 
-**Trung hạn (5–10 năm):** Công nghiệp công nghệ cao, chuỗi giá trị khu vực; văn hóa – con người là động lực cạnh tranh.
-Trong trung hạn, chiến lược phát triển tập trung vào xây dựng nền công nghiệp công nghệ cao gắn với tham gia sâu vào chuỗi giá trị khu vực và toàn cầu, từng bước chuyển từ vai trò "gia công – lắp ráp" sang "thiết kế – sáng tạo – làm chủ công nghệ". Nhà nước định hướng nguồn lực vào các ngành có hàm lượng tri thức và giá trị gia tăng cao như công nghệ thông tin, tự động hóa, năng lượng tái tạo, vật liệu mới và y sinh.
+### Trung hạn (5–10 năm)
+Xây dựng nền công nghiệp công nghệ cao, chuyển từ “gia công – lắp ráp” sang “thiết kế – sáng tạo”. Lấy văn hóa và con người làm trụ cột cạnh tranh quốc gia thông qua giáo dục sáng tạo.
 
-**Dài hạn (10–30 năm):** Kinh tế tri thức, xanh – bền vững; vị thế trung tâm hợp tác khu vực, đối ngoại đa phương sâu.
-Ở tầm nhìn dài hạn, mục tiêu chiến lược là hình thành nền kinh tế tri thức xanh và bền vững, trong đó tri thức, đổi mới sáng tạo và công nghệ cao trở thành nguồn lực sản xuất chủ yếu, thay thế dần sự phụ thuộc vào khai thác tài nguyên và lao động giá rẻ. Phát triển bền vững được đặt trong mối quan hệ hài hòa giữa tăng trưởng kinh tế, bảo vệ môi trường và công bằng xã hội.`,
-    media: []
+### Dài hạn (10–30 năm)
+Hình thành nền kinh tế tri thức xanh và bền vững. Tri thức và đổi mới sáng tạo trở thành nguồn lực sản xuất chủ yếu. Việt Nam giữ vị thế trung tâm hợp tác khu vực và đối tác tin cậy trong hệ thống đa phương quốc tế, hội nhập sâu nhưng vẫn giữ vững bản sắc và quyền tự chủ quốc gia theo mục tiêu Cương lĩnh 1991.`,
+    media: [
+      { 
+        type: 'image', 
+        src: 'https://udc.com.vn/datafiles/34093/upload/images/tin-tuc/2025/38TS%20-%20CBCNV%20hoc%20AI/z6990006250393_cdf42a316f990715c86b82d214654cea.jpg', 
+        caption: 'Chuyển đổi số và công nghệ cao – động lực chính cho giai đoạn 10-30 năm tới' 
+      },
+      { 
+        type: 'video', 
+        src: 'sucASmKqgnY', 
+        caption: 'Tầm nhìn Việt Nam 2045: Đất nước phát triển, thu nhập cao' 
+      }
+           ]
   }
 ];
 
