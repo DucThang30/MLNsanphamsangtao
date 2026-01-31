@@ -58,12 +58,12 @@ Huế - cố đô của dân tộc được giải phóng, đánh dấu sự s�
     media: [
       { 
         type: 'image', 
-        src: 'https://media.vov.vn/uploaded/gnnlexby/2024_03_26/hue_giaiphong_ykqu.jpg', 
+        src: 'https://icdn.dantri.com.vn/k:8b823cd4eb/2015/08/22/2287-74a41/ky-uc-nguoi-keo-ngon-co-cach-mang-dau-tien-tren-dat-hue.jpg', 
         caption: 'Cờ giải phóng tung bay trên Kỳ Đài Huế' 
       },
       { 
         type: 'image', 
-        src: 'https://media.vov.vn/uploaded/gnnlexby/2024_03_26/hue_1975_1_vquh.jpg', 
+        src: 'https://bcp.cdnchinhphu.vn/zoom/600_315/Uploaded/nguyenvanhuan/2015_03_25/images616388_xe_tang.jpg', 
         caption: 'Nhân dân Huế đón chào bộ đội' 
       }
     ]
@@ -78,17 +78,13 @@ Huế - cố đô của dân tộc được giải phóng, đánh dấu sự s�
     media: [
       { 
         type: 'image', 
-        src: 'https://media.vov.vn/uploaded/gnnlexby/2024_03_29/danang_oyag.jpg', 
+        src: 'https://file3.qdnd.vn/DATA/OLD_IMG/xuandung/2014/12/19/200114dung37407150544945.jpg', 
         caption: 'Bộ đội tiến vào Đà Nẵng' 
       },
-      { 
-        type: 'image', 
-        src: 'https://media.vov.vn/uploaded/gnnlexby/2024_03_29/danang_1975_2_yapm.jpg', 
-        caption: 'Nhân dân Đà Nẵng chào đón giải phóng' 
-      },
+  
       { 
         type: 'video', 
-        src: 'mce2FvKZ-PI', 
+        src: 'rd5s1RLtU58', 
         caption: 'Giải phóng Đà Nẵng 1975' 
       }
     ]
@@ -103,7 +99,7 @@ Xuân Lộc là trận then chốt cuối cùng trên đường tiến vào Sài
     media: [
       { 
         type: 'image', 
-        src: 'https://baotanglichsu.vn/uploads/news/2021_04/xuan-loc-1975-1.jpg', 
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2tgylXtQ0JCN3gBfK3eUuI-gvTr-7b9qIgA&s', 
         caption: 'Trận Xuân Lộc - cửa ngõ Sài Gòn' 
       }
     ]
@@ -117,7 +113,7 @@ Xuân Lộc là trận then chốt cuối cùng trên đường tiến vào Sài
     media: [
       { 
         type: 'image', 
-        src: 'https://baotanglichsu.vn/uploads/news/2020_04/nguyen-van-thieu-tu-chuc-ngay-21-4-1975-1.jpg', 
+        src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZY7KvjE54Y4uJbJEq8ZM3ktGrKMgnXhN9AQ&s', 
         caption: 'Nguyễn Văn Thiệu từ chức ngày 21/4/1975' 
       }
     ]
@@ -133,12 +129,12 @@ Xuân Lộc là trận then chốt cuối cùng trên đường tiến vào Sài
     media: [
       { 
         type: 'image', 
-        src: 'https://media.vov.vn/uploaded/gnnlexby/2024_04_26/chiendichhcm_1975_1_ypfy.jpg', 
+        src: 'https://cdnmedia.baotintuc.vn/2015/03/20/14/04/hanhquan.jpg', 
         caption: 'Bộ đội hành quân trong Chiến dịch Hồ Chí Minh' 
       },
       { 
         type: 'video', 
-        src: 'c4IRIvwmGL8', 
+        src: 'YCdUWoXi8eo', 
         caption: 'Chiến dịch Hồ Chí Minh' 
       }
     ]
@@ -156,22 +152,22 @@ Tổng thống Dương Văn Minh tuyên bố đầu hàng vô điều kiện.
     media: [
       { 
         type: 'image', 
-        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tank_390_crashing_through_the_gates_of_the_Independence_Palace.jpg/1024px-Tank_390_crashing_through_the_gates_of_the_Independence_Palace.jpg', 
+        src: 'https://cdnphoto.dantri.com.vn/XEnd6V0jN24l7wRjcQW4kMA4918=/zoom/1200_630/2020/04/17/images-13086351-1587098124624.jpg', 
         caption: 'Xe tăng 390 húc đổ cổng Dinh Độc Lập' 
       },
       { 
         type: 'image', 
-        src: 'https://media.vov.vn/sites/default/files/styles/large/public/2024-04/30.4.1975.jpg', 
+        src: 'https://media.baosonla.org.vn/Uploads/Image2021/oh5mqbn2.jpg', 
         caption: 'Cờ giải phóng trên nóc Dinh Độc Lập' 
       },
       { 
         type: 'image', 
-        src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Surrender_of_South_Vietnam.jpg/800px-Surrender_of_South_Vietnam.jpg', 
+        src: 'https://nguoiduatin.mediacdn.vn/zoom/700_438/media/nguyen-ngoc-hoai-thanh/2024/04/30/anh-1-trungtuongthe.jpg', 
         caption: 'Tổng thống Dương Văn Minh tuyên bố đầu hàng' 
       },
       { 
         type: 'video', 
-        src: 'mce2FvKZ-PI', 
+        src: 'J6NAA0Mzgtw', 
         caption: 'Toàn cảnh ngày 30/4/1975' 
       }
     ]
@@ -187,13 +183,73 @@ Tổng thống Dương Văn Minh tuyên bố đầu hàng vô điều kiện.
 - Các tỉnh Đồng bằng sông Cửu Long: 01-02/5
 
 Đến ngày 02/5/1975, toàn bộ lãnh thổ miền Nam Việt Nam hoàn toàn giải phóng.`,
+    media: []
+  },
+  {
+    date: '1976 - 1980',
+    title: 'Giai đoạn Toàn thắng và Khát vọng Tiến thẳng lên Chủ nghĩa xã hội',
+    content: `Sau khi thống nhất đất nước về mặt Nhà nước vào tháng 7/1976, Việt Nam bước vào thời kỳ quá độ với tâm thế của một dân tộc vừa giành chiến thắng vĩ đại. Đại hội IV (12/1976) đã xác định đường lối chiến lược: đưa cả nước tiến nhanh, tiến mạnh, tiến vững chắc lên CNXH.
+
+Về mặt lý luận, đây là thời kỳ áp dụng mô hình "Quá độ gián tiếp" nhưng với tư duy có phần nóng vội. Đảng xác định nhiệm vụ trọng tâm là "Ba cuộc cách mạng": Cách mạng về quan hệ sản xuất, Cách mạng khoa học - kỹ thuật và Cách mạng tư tưởng - văn hóa (trong đó Cách mạng KH-KT là then chốt). Kế hoạch 5 năm (1976-1980) đặt ra những chỉ tiêu kinh tế khổng lồ dựa trên niềm tin rằng sức mạnh chính trị và tinh thần của ngày chiến thắng có thể thay thế cho các quy luật kinh tế khách quan. Tuy nhiên, việc ưu tiên công nghiệp nặng trong khi nền tảng nông nghiệp còn yếu kém đã bắt đầu tạo ra những vết nứt trong hệ thống cung ứng quốc gia.`,
     media: [
-      { 
-        type: 'image', 
-        src: 'https://media.vov.vn/uploaded/gnnlexby/2024_05_01/giaiphong_mien_nam_1_oxpv.jpg', 
-        caption: 'Lễ chào cờ đầu tiên sau giải phóng' 
+      {
+        type: 'image',
+        src: 'https://file3.qdnd.vn/data/images/0/2022/11/29/huyentrang_km/dai%20hoi%20dai%20bieu%20toan%20quoc%20lan%20thu%204.jpg',
+        caption: 'Đại hội IV - Điểm khởi đầu của khát vọng xây dựng CNXH trên quy mô toàn quốc'
       }
     ]
+  },
+  {
+    date: '1977 - 1979',
+    title: 'Cuộc "Đại phẫu thuật" Quan hệ sản xuất tại Miền Nam và Hệ quả',
+    content: `Để thực hiện quá độ, Nhà nước tiến hành cải tạo XHCN đối với các thành phần kinh tế tư nhân tại miền Nam. Hàng loạt chiến dịch (tiêu biểu là X1, X2) nhằm xóa bỏ giai cấp tư sản, quốc hữu hóa tư liệu sản xuất và ép các cơ sở kinh doanh tư nhân vào hình thức công tư hợp doanh.
+
+Trong nông nghiệp, mô hình Hợp tác hóa kiểu cũ từ miền Bắc được áp đặt nhanh chóng vào miền Nam. Lý luận thời bấy giờ cho rằng phải thay đổi Quan hệ sản xuất (tập thể hóa) trước để mở đường cho Lực lượng sản xuất phát triển. Thế nhưng, thực tế lại diễn ra ngược lại: việc người nông dân mất quyền tự chủ trên mảnh đất của mình dẫn đến tình trạng bỏ ruộng, sản xuất đình trệ. Cùng với cuộc chiến tranh biên giới Tây Nam và phía Bắc (1979), Việt Nam rơi vào tình trạng bị bao vây cấm vận, đẩy nền kinh tế vào thời kỳ đen tối của sự khan hiếm trầm trọng.`,
+    media: []
+  },
+  {
+    date: '1979 - 1981',
+    title: 'Hội nghị Trung ương 6 và Chỉ thị 100: Những "Lỗ hổng" đầu tiên của Cơ chế Bao cấp',
+    content: `Đứng trước nguy cơ sụp đổ kinh tế, Hội nghị Trung ương 6 (khóa IV) năm 1979 là một sự "thức tỉnh" lý luận quan trọng. Đảng bắt đầu thừa nhận sự tồn tại của các thành phần kinh tế khác ngoài quốc doanh và tập thể, đưa ra chủ trương "làm cho sản xuất bung ra".
+
+Bước đột phá lớn nhất diễn ra vào tháng 1/1981 với Chỉ thị 100 của Ban Bí thư về "Khoán sản phẩm" (Khoán 100). Đây là lần đầu tiên sau 5 năm quá độ, lợi ích cá nhân của người lao động được thừa nhận chính thức trong hệ thống XHCN. Khoán 100 đã giải phóng sức lao động bị kìm hãm trong các HTX, tạo ra sự tăng trưởng đột biến về sản lượng lương thực. Đây là minh chứng thực tiễn đầu tiên cho thấy: trong thời kỳ quá độ, không thể áp dụng mô hình XHCN hoàn chỉnh khi trình độ lực lượng sản xuất còn quá thấp.`,
+    media: [
+      {
+        type: 'image',
+        src: 'https://i.ytimg.com/vi/SBlc3jbMX9I/maxresdefault.jpg',
+        caption: 'Chỉ thị 100 - Luồng sinh khí mới cho nông nghiệp Việt Nam thời kỳ quá độ'
+      }
+    ]
+  },
+  {
+    date: '1982 - 1984',
+    title: 'Đại hội V và Cuộc đấu tranh giữa Bảo thủ và Đổi mới',
+    content: `Đại hội V (3/1982) là một bước lùi để tiến. Đảng nhận định Việt Nam đang ở "Chặng đường đầu tiên" của thời kỳ quá độ — một quá trình cực kỳ lâu dài và phức tạp. Thứ tự ưu tiên được điều chỉnh: Nông nghiệp là mặt trận hàng đầu, Công nghiệp nhẹ là trọng tâm để phục vụ tiêu dùng và xuất khẩu.
+
+Tuy nhiên, đây cũng là giai đoạn diễn ra cuộc đấu tranh gay gắt về tư tưởng giữa phái bảo thủ (muốn giữ vững cơ chế kế hoạch hóa tập trung) và phái đổi mới (muốn thừa nhận kinh tế thị trường). Trong khi Trung ương còn đang thảo luận, các địa phương (đặc biệt là TP.HCM, Long An, An Giang) đã chủ động "phá rào", thực hiện mua bán theo giá thỏa thuận, phá vỡ sự kìm kẹp của cơ chế "ngăn sông cấm chợ". Những thực tế này đã làm lung lay tận gốc rễ lý luận về mô hình CNXH kiểu cũ.`,
+    media: []
+  },
+  {
+    date: '1985',
+    title: 'Thất bại của "Giá - Lương - Tiền" và Điểm tới hạn của Mô hình cũ',
+    content: `Tháng 9/1985, Nhà nước thực hiện cuộc tổng điều chỉnh Giá - Lương - Tiền nhằm xóa bỏ bao cấp bằng một cuộc "tổng tiến công" hành chính. Tuy nhiên, do thực hiện đổi tiền khi hàng hóa trong kho của Nhà nước còn quá ít, cuộc cải cách đã biến thành một thảm họa kinh tế.
+
+Lạm phát bùng nổ vượt tầm kiểm soát (phi mã), đồng tiền mất giá theo từng giờ, đời sống cán bộ và nhân dân rơi vào cảnh khốn cùng. Thất bại của "Giá - Lương - Tiền" năm 1985 là sự kết thúc của một tư duy duy ý chí: dùng mệnh lệnh hành chính để thay thế quy luật giá trị của thị trường. Chính sự đổ vỡ này đã tạo ra sức ép không thể đảo ngược, buộc toàn bộ hệ thống chính trị phải tiến tới cuộc Đổi mới toàn diện tại Đại hội VI vào năm sau.`,
+    media: [
+      {
+        type: 'image',
+        src: 'https://vcdn1-vnexpress.vnecdn.net/2016/12/15/10-8005-1481814589.png?w=680&h=0&q=100&dpr=2&fit=crop&s=n2qvupDTGS0ljOqDCf7FkA',
+        caption: 'Dân làng đào kênh dẫn nước vào đồng ruộng thời hợp tác xã'
+      }
+    ]
+  },
+  {
+    date: 'Tổng kết 1976 - 1985',
+    title: 'Sự hình thành Hình thái Lý luận mới về Chủ nghĩa xã hội',
+    content: `Mười năm (1976-1985) không đơn thuần là 10 năm khủng hoảng, mà là 10 năm "thử và sai" để tìm ra con đường quá độ thực sự phù hợp với Việt Nam. Bài học lớn nhất rút ra là: Không được nóng vội chủ quan, không được đồng nhất CNXH với kinh tế bao cấp, và phải tôn trọng quy luật khách quan.
+
+Giai đoạn này đã trả lời cho câu hỏi trọng tâm: CNXH không phải là một mô hình cứng nhắc có sẵn để áp đặt, mà là kết quả của một quá trình phát triển lực lượng sản xuất lâu dài. Mọi nỗ lực thay đổi quan hệ sản xuất một cách cưỡng ép mà không dựa trên trình độ kỹ thuật đều dẫn đến thất bại. Đây chính là tiền đề lý luận cực kỳ quý giá để Đảng Cộng sản Việt Nam khởi xướng công cuộc Đổi mới, mở ra một kỷ nguyên phát triển mới cho dân tộc.`,
+    media: []
   }
 ];
 
