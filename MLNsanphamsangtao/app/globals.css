@@ -1,0 +1,1138 @@
+/* ĐẶT TAILWINDS TRƯỚC */
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* SAU ĐÓ IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+/* --- GIỮ NGUYÊN KHAI BÁO MÀU CŨ CỦA BẠN --- */
+:root {
+  --background: oklch(0.98 0.002 60);
+  --foreground: oklch(0.15 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 240);
+  --primary: oklch(0.25 0.25 30);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.92 0.05 45);
+  --secondary-foreground: oklch(0.15 0.01 240);
+  --muted: oklch(0.88 0.03 240);
+  --muted-foreground: oklch(0.45 0.02 240);
+  --accent: oklch(0.55 0.2 30);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.03 240);
+  --input: oklch(0.95 0.02 240);
+  --ring: oklch(0.35 0.15 30);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Fonts */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Border Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  
+  /* Animation */
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-bounce: bounce 1s infinite;
+}
+
+/* ==================== BASE STYLES ==================== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-click {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+@keyframes highlight-video {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(220, 38, 38, 0.1); }
+  100% { background-color: transparent; }
+}
+
+@keyframes modalAppearFixed {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ==================== MODAL ANIMATIONS (THÊM VÀO ĐÂY) ==================== */
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.zoom-in {
+  animation-name: zoom-in;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+/* Ngăn scroll body khi modal mở */
+body.modal-open {
+  overflow: hidden !important;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* 1. Ẩn thanh cuộn */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* 2. Thanh cuộn đẹp */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(185, 28, 28, 0.5);
+}
+
+/* 3. Hiệu ứng cho timeline years */
+.timeline-year-btn {
+  position: relative;
+  overflow: hidden;
+}
+.timeline-year-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+.timeline-year-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* 4. Hiệu ứng cho card */
+.history-card {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.history-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(185, 28, 28, 0.15);
+}
+
+/* 5. Gradient border */
+.gradient-border {
+  position: relative;
+  border-radius: 1.5rem;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, #dc2626, #ea580c, #dc2626);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* 6. Hiệu ứng Gradient chữ mạ vàng */
+.text-gold-gradient {
+  background: linear-gradient(to bottom, #fef3c7 0%, #facc15 50%, #b45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+}
+
+/* 7. Skeleton loading animation */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+/* 8. Glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 9. Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* 10. Custom focus styles */
+.focus-gold:focus {
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.3);
+}
+
+/* ==================== VIDEO STYLES ==================== */
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  scroll-margin-top: 80px;
+}
+.video-container video,
+.video-container iframe {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+.video-container:target {
+  animation: highlight-video 1.5s ease;
+}
+
+/* Video Modal Fixed - HIỆN TẠI CHỖ, KHÔNG CUỘN */
+.video-modal-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  pointer-events: none;
+}
+.video-modal-fixed.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.video-modal-fixed.active .video-modal-player {
+  animation: modalAppearFixed 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  max-height: 700px;
+  z-index: 100000;
+}
+
+.video-modal-player {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+.video-modal-player video,
+.video-modal-player iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+  display: block;
+}
+
+.video-modal-close-btn {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background: var(--destructive);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100001;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+.video-modal-close-btn:hover {
+  background: #b91c1c;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Video Thumbnail với Play Button nổi bật */
+.video-click-here {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin: 2rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.video-click-here:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(220, 38, 38, 0.3);
+}
+.dark .video-click-here {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.dark .video-click-here:hover {
+  box-shadow: 0 25px 60px rgba(220, 38, 38, 0.4);
+}
+
+.video-click-thumbnail {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.video-click-here:hover .video-click-thumbnail {
+  transform: scale(1.05);
+}
+
+.video-click-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background: rgba(220, 38, 38, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  transition: all 0.4s ease;
+  border: 4px solid white;
+  z-index: 10;
+  animation: pulse-click 2s infinite;
+}
+.video-click-here:hover .video-click-play {
+  background: rgba(185, 28, 28, 0.98);
+  transform: translate(-50%, -50%) scale(1.15);
+  border-width: 5px;
+}
+.dark .video-click-play {
+  border-color: #1f2937;
+}
+
+.video-click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.video-click-here:hover .video-click-overlay {
+  opacity: 1;
+}
+
+.video-click-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.video-click-info {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Body lock khi modal mở */
+body.video-modal-lock {
+   overflow: hidden;
+}
+
+/* Loading indicator */
+.video-modal-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 5;
+}
+
+/* Video Controls trong modal */
+.video-modal-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+.video-modal-player:hover .video-modal-controls {
+  opacity: 1;
+}
+
+.video-modal-control-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.video-modal-control-btn:hover {
+  background: rgba(220, 38, 38, 0.8);
+  transform: translateY(-2px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+  .video-modal-container {
+    width: 95%;
+    height: 70vh;
+  }
+  
+  .video-click-thumbnail {
+    height: 350px;
+  }
+  
+  .video-click-play {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+  }
+  
+  .text-gold-gradient {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-gold-gradient {
+    font-size: 3rem;
+  }
+  
+  .timeline-year-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+  
+  .tab-responsive {
+    flex-direction: column;
+  }
+  
+  .tab-responsive button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* SỬA LỖI SELECTOR NÀY */
+  .hero-section h1 {
+    font-size: 3rem !important;
+  }
+  
+  .hero-section h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Video Responsive */
+  .video-modal-container {
+    width: 98%;
+    height: 60vh;
+  }
+  
+  .video-click-thumbnail {
+    height: 280px;
+  }
+  
+  .video-click-play {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .video-modal-close-btn {
+    top: -50px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .video-click-title {
+    font-size: 1.5rem;
+  }
+  
+  .video-container video,
+  .video-container iframe {
+    min-height: 250px;
+  }
+  
+  .video-player-fixed {
+    position: relative;
+    top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .video-play-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .custom-video-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .custom-video-controls button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-modal-container {
+    height: 50vh;
+    border-radius: var(--radius);
+  }
+  
+  .video-click-thumbnail {
+    height: 220px;
+  }
+  
+  .video-click-play {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .video-click-overlay {
+    padding: 1rem;
+  }
+  
+  .text-gold-gradient {
+    font-size: 2.5rem;
+  }
+}
+
+/* ==================== PRINT STYLES ==================== */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .timeline-content {
+    break-inside: avoid;
+  }
+  
+  button, .timeline-year-btn, audio, iframe {
+    display: none !important;
+  }
+  
+  .video-container,
+  .video-player-fixed,
+  .video-modal,
+  .video-thumbnail,
+  .video-playlist,
+  .video-modal-fixed,
+  .video-click-here,
+  .video-click-play {
+    display: none !important;
+  }
+  
+  .video-placeholder {
+    display: block !important;
+    text-align: center;
+    font-style: italic;
+    color: var(--muted-foreground);
+    border: 1px dashed var(--border);
+    padding: 2rem;
+    margin: 1rem 0;
+    break-inside: avoid;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .video-container {
+    border: 3px solid var(--foreground);
+  }
+  
+  .custom-video-controls button {
+    border: 2px solid var(--foreground);
+  }
+  
+  .video-play-button {
+    border: 3px solid #000;
+    background: #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .video-container,
+  .video-modal,
+  .video-thumbnail,
+  .video-playlist-item,
+  .timeline-year-btn {
+    transition: none;
+  }
+  
+  .timeline-year-btn::before {
+    display: none;
+  }
+  
+  .video-thumbnail:hover img {
+    transform: none;
+  }
+  
+  .video-modal-content {
+    transition: none;
+  }
+  
+  .video-loading::after {
+    animation: none;
+    border-top-color: transparent;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==================== DARK MODE ADJUSTMENTS ==================== */
+.dark .video-container {
+  border-color: var(--border);
+}
+.dark .video-player-fixed {
+  background: var(--card);
+  border-color: var(--border);
+}
+.dark .custom-video-controls {
+  background: var(--card);
+  border-color: var(--border);
+}
+.dark .video-playlist-item {
+  background: var(--card);
+  border-color: var(--border);
+}
+.dark .video-playlist-item:hover {
+  background: var(--muted);
+}
+
+/* ==================== SCROLLBAR STYLES ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #dc2626, #ea580c);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #b91c1c, #c2410c);
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(220, 38, 38, 0.3);
+  color: #000;
+}
+
+/* Smooth transitions */
+*
+button,
+.card-hover,
+.history-card,
+.video-click-here {
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* ==================== TYPOGRAPHY ENHANCEMENTS ==================== */
+.text-gold-gradient {
+  font-family: var(--font-serif);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
+/* ==================== OPTIMIZED VIDEO COMPONENTS ==================== */
+
+/* Video thumbnail hover effect */
+.video-thumbnail-hover {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.video-thumbnail-hover img {
+  transition: transform 0.5s ease;
+}
+.video-thumbnail-hover:hover img {
+  transform: scale(1.1);
+}
+
+/* Video playlist */
+.video-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.video-playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.video-playlist-item:hover {
+  background: var(--muted);
+  transform: translateX(5px);
+}
+.video-playlist-item.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+/* Video chapters */
+.video-chapters {
+  display: flex;
+  margin-top: 1rem;
+  gap: 2px;
+}
+.video-chapter {
+  flex: 1;
+  height: 4px;
+  background: var(--muted);
+  cursor: pointer;
+  position: relative;
+  border-radius: 2px;
+}
+.video-chapter:hover {
+  background: var(--accent);
+}
+
+/* Video quality selector */
+.video-quality-selector {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  min-width: 120px;
+  display: none;
+  z-index: 100;
+}
+.video-container:hover .video-quality-selector {
+  display: block;
+}
+
+/* Video speed control */
+.video-speed-control {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  min-width: 100px;
+  display: none;
+  z-index: 100;
+}
+.video-container:hover .video-speed-control {
+  display: block;
+}
+
+/* Video error state */
+.video-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: var(--destructive);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Video loading skeleton */
+.video-skeleton {
+  background: linear-gradient(90deg, var(--muted) 25%, var(--border) 50%, var(--muted) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--radius-lg);
+}
+
+/* Video like/dislike buttons */
+.video-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.video-like-button,
+.video-dislike-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--muted);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.video-like-button:hover {
+  background: #10b981;
+  color: white;
+}
+.video-dislike-button:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* Video metadata */
+.video-metadata {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+.video-metadata-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Video recommendations */
+.video-recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.video-recommendation-card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.video-recommendation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Video auto-play next */
+.video-autoplay-next {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==================== PERFORMANCE OPTIMIZATIONS ==================== */
+
+/* Will-change for smooth animations */
+.video-click-here,
+.video-modal-player,
+.video-modal-close-btn {
+  will-change: transform, opacity;
+}
+
+/* Containment for better performance */
+.video-modal-container {
+  contain: layout style;
+}
+
+/* Optimize video loading */
+.video-click-thumbnail {
+  loading: lazy;
+  decoding: async;
+}
+
+/* ==================== FALLBACKS ==================== */
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+  }
+  
+  .video-modal-control-btn {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Fallback for browsers without CSS Grid */
+@supports not (display: grid) {
+  .video-recommendations-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .video-recommendation-card {
+    flex: 1 0 280px;
+    margin: 0.75rem;
+  }
+}
+
+/* ==================== CLEANUP & FINAL TOUCHES ==================== */
+
+/* Remove duplicate styles and consolidate */
+.audio-player-styles audio::-webkit-media-controls-panel {
+  background-color: #fef3c7;
+}
+.audio-player-styles audio::-webkit-media-controls-play-button {
+  background-color: #dc2626;
+  border-radius: 50%;
+}
+
+/* Ensure proper stacking context */
+.video-modal-fixed {
+  isolation: isolate;
+}
+
+/* Optimize print styles */
+@media print {
+  .print-optimize {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Final performance optimization */
+@media (prefers-reduced-data: reduce) {
+  .video-click-thumbnail,
+  .video-related-thumbnail,
+  .video-recommendation-card img {
+    display: none;
+  }
+  
+  .video-click-here::before {
+    content: "🎬 Video Content (disabled for data saving)";
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    background: var(--muted);
+    border-radius: var(--radius);
+  }
+}
