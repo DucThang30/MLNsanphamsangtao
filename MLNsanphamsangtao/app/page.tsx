@@ -259,81 +259,8 @@ export default function HomePage() {
       {/* YouTube Player Ẩn */}
       <div id="youtube-player" className="hidden"></div>
       
-      {/* Control Bar */}
+      {/* Control Bar (Đã xóa Volume) */}
       <div className="fixed top-6 right-6 z-50 flex items-center gap-4">
-        {/* Volume Control Container */}
-        <div className="relative">
-          {/* Volume Slider */}
-          {showVolumeControl && (
-            <div className="absolute bottom-full right-0 mb-3 animate-in fade-in slide-in-from-top-2 duration-300">
-              <div className="bg-black/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-4 shadow-2xl">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm text-gray-300 font-medium">Âm lượng</span>
-                  <span className="text-xs text-amber-400 bg-amber-900/30 px-2 py-1 rounded">
-                    {volume}%
-                  </span>
-                </div>
-                
-                <div className="w-48">
-                  {/* Volume Slider */}
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={volume}
-                    onChange={(e) => handleVolumeChange(parseInt(e.target.value))}
-                    className="w-full h-2 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gradient-to-r [&::-webkit-slider-thumb]:from-amber-500 [&::-webkit-slider-thumb]:to-red-500 [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-amber-300"
-                  />
-                  
-                  {/* Volume Markers */}
-                  <div className="flex justify-between mt-2 px-1">
-                    {[0, 25, 50, 75, 100].map((mark) => (
-                      <div key={mark} className="flex flex-col items-center">
-                        <div className={`w-1 h-2 rounded-full ${volume >= mark ? 'bg-amber-400' : 'bg-gray-600'}`} />
-                        <span className={`text-xs mt-1 ${volume >= mark ? 'text-amber-400' : 'text-gray-500'}`}>
-                          {mark === 100 ? 'MAX' : mark}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Quick Volume Buttons */}
-                  <div className="flex gap-2 mt-4">
-                    {[0, 30, 70, 100].map((level) => (
-                      <button
-                        key={level}
-                        onClick={() => handleVolumeChange(level)}
-                        className={`flex-1 py-2 rounded-lg text-xs font-medium transition-all ${
-                          volume === level
-                            ? 'bg-gradient-to-r from-amber-600 to-red-600 text-white'
-                            : 'bg-gray-800/50 hover:bg-gray-700/70 text-gray-300'
-                        }`}
-                      >
-                        {level === 0 ? 'Tắt' : level === 100 ? 'Max' : `${level}%`}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Arrow */}
-              <div className="absolute -bottom-1 right-6 w-3 h-3 bg-black/80 border-b border-r border-gray-700/50 transform rotate-45"></div>
-            </div>
-          )}
-          
-          {/* Volume Toggle Button */}
-          <button
-            onClick={toggleVolumeControl}
-            className={`p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
-              volume > 0
-                ? 'bg-amber-900/30 border-amber-500/50 text-amber-300 hover:bg-amber-900/50' 
-                : 'bg-gray-900/30 border-gray-500/50 text-gray-400 hover:bg-gray-900/50'
-            }`}
-            title="Chỉnh âm lượng"
-          >
-            {getVolumeIcon()}
-          </button>
-        </div>
         
         {/* Play/Pause Button */}
         <button
@@ -361,7 +288,7 @@ export default function HomePage() {
         
         {/* Mobile Menu Button */}
         <button
-          onClick={() => setShowTimeline(!showTimeline)}
+          onClick={(e) => { e.stopPropagation(); setShowTimeline(!showTimeline); }}
           className="p-3 rounded-full backdrop-blur-md bg-gray-900/30 border border-gray-500/50 text-gray-300 hover:bg-gray-900/50 hover:scale-110 transition-all duration-300 lg:hidden"
           title={showTimeline ? "Ẩn timeline" : "Hiện timeline"}
         >
@@ -369,9 +296,9 @@ export default function HomePage() {
         </button>
       </div>
 
-      {/* Music Status Indicator */}
+      {/* Music Status Indicator (Đã xóa hiển thị %) */}
       {isMusicPlaying && (
-        <div className="fixed top-6 left-6 z-50 animate-in fade-in slide-in-from-left duration-300">
+        <div className="fixed top-6 left-6 z-50 animate-in fade-in slide-in-from-left duration-300 pointer-events-none">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/30 backdrop-blur-md border border-green-500/30 shadow-lg">
             <div className="flex gap-1">
               <div className="w-1 h-4 bg-green-400 animate-pulse" style={{animationDelay: '0ms'}}></div>
@@ -381,24 +308,6 @@ export default function HomePage() {
             </div>
             <div className="text-xs">
               <span className="text-green-300 font-medium">Đang phát</span>
-              <span className="text-gray-400 ml-2">{volume}%</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Volume Level Indicator (Shows briefly when changing volume) */}
-      {showVolumeControl && (
-        <div className="fixed top-24 right-6 z-50 animate-in fade-in duration-300">
-          <div className="px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-amber-500/30">
-            <div className="flex items-center gap-2">
-              <div className={`w-3 h-3 rounded-full ${
-                volume > 50 ? 'bg-green-500 animate-pulse' : 
-                volume > 0 ? 'bg-yellow-500' : 'bg-gray-500'
-              }`} />
-              <span className="text-sm text-amber-300 font-medium">
-                Âm lượng: <span className="text-white">{volume}%</span>
-              </span>
             </div>
           </div>
         </div>
@@ -409,7 +318,7 @@ export default function HomePage() {
         showTimeline ? 'lg:grid lg:grid-cols-12' : ''
       }`}>
         
-        {/* LEFT COLUMN - Hero Section (Fullscreen when not selected) */}
+        {/* LEFT COLUMN - Hero Section */}
         <section className={`relative h-full overflow-hidden transition-all duration-1000 ease-in-out ${
           showTimeline ? 'lg:col-span-5' : 'w-full'
         }`}>
@@ -423,8 +332,6 @@ export default function HomePage() {
                 filter: showTimeline ? 'brightness(0.7)' : 'brightness(0.9)'
               }}
             />
-            
-            {/* Animated Gradient Overlay */}
             <div className={`absolute inset-0 transition-all duration-1500 ${
               showTimeline 
                 ? `bg-gradient-to-br ${currentInfo.color} opacity-90`
@@ -452,7 +359,7 @@ export default function HomePage() {
           <div className="relative z-10 h-full flex flex-col justify-between p-8 lg:p-12">
             
             {/* Logo/Title */}
-            <div className="animate-in fade-in slide-in-from-top duration-1000">
+            <div className="animate-in fade-in slide-in-from-top duration-1000 pointer-events-none">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-600 to-red-600 flex items-center justify-center shadow-2xl">
                   <Star className="w-6 h-6 text-white fill-white" />
@@ -469,7 +376,7 @@ export default function HomePage() {
             </div>
 
             {/* Year Display */}
-            <div className="space-y-4 animate-in slide-in-from-left duration-1000 fade-in fill-mode-both">
+            <div className="space-y-4 animate-in slide-in-from-left duration-1000 fade-in fill-mode-both pointer-events-none">
               <div className="overflow-hidden">
                 <h1 className={`font-serif font-black leading-none transition-all duration-1000 ${
                   showTimeline 
@@ -519,7 +426,7 @@ export default function HomePage() {
                   return (
                     <button
                       key={item.year}
-                      onClick={() => handleYearSelect(item.year)}
+                      onClick={(e) => { e.stopPropagation(); handleYearSelect(item.year); }}
                       className={`relative group rounded-xl p-4 transition-all duration-500 overflow-hidden ${
                         isActive
                           ? `scale-105 shadow-2xl border-2 ${item.color.replace('from-', 'border-').split(' ')[0]}/50`
@@ -582,10 +489,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          {/* Decorative Elements */}
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-500/10 to-red-500/10 rounded-full blur-3xl pointer-events-none" />
         </section>
 
         {/* RIGHT COLUMN - Timeline Content */}
@@ -593,14 +496,14 @@ export default function HomePage() {
           <section className={`relative h-full overflow-hidden bg-gradient-to-br from-gray-50 to-amber-50/30 lg:col-span-7 animate-in slide-in-from-right duration-1000`}>
             
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
               <div className="absolute inset-0" style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               }} />
             </div>
             
             {/* Content Container */}
-            <div className="relative h-full overflow-y-auto custom-scrollbar">
+            <div className="relative h-full overflow-y-auto custom-scrollbar" onClick={(e) => e.stopPropagation()}>
               <div className="p-6 lg:p-12 max-w-4xl mx-auto">
                 
                 {/* Header */}
@@ -620,19 +523,12 @@ export default function HomePage() {
                       </h2>
                     </div>
                     
-                    {/* Music Info with Volume */}
+                    {/* Music Status - Simplified (Đã xóa volume %) */}
                     <div className="hidden lg:flex items-center gap-3 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-amber-200">
                       <div className={`w-2 h-2 rounded-full ${isMusicPlaying ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}`} />
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-700">
-                          {isMusicPlaying ? 'Nhạc đang phát' : 'Nhạc tạm dừng'}
-                        </span>
-                        <div className="w-px h-4 bg-gray-300" />
-                        <div className="flex items-center gap-1">
-                          <Volume className="w-3 h-3 text-amber-600" />
-                          <span className="text-xs text-amber-700 font-medium">{volume}%</span>
-                        </div>
-                      </div>
+                      <span className="text-sm text-gray-700">
+                        {isMusicPlaying ? 'Nhạc đang phát' : 'Nhạc tạm dừng'}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -661,28 +557,14 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Navigation Hint */}
-                <div className="mt-12 text-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 backdrop-blur-sm border border-black/10">
-                    <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                    <span className="text-sm text-gray-600">
-                      Chọn giai đoạn khác để khám phá thêm
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
-
-            {/* Decorative Corner */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-amber-500/10 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-red-500/5 via-transparent to-transparent pointer-events-none rounded-full blur-3xl" />
           </section>
         )}
 
-        {/* Instruction Overlay (Only shows on initial load) */}
+        {/* Instruction Overlay (Đã xóa hướng dẫn volume) */}
         {isExpandedView && (
           <div className="fixed inset-0 z-40 flex items-center justify-center pointer-events-none animate-in fade-in duration-1000">
-            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm" />
             <div className="relative z-50 text-center space-y-6 p-8">
               <div className="inline-block p-6 rounded-3xl bg-black/40 backdrop-blur-xl border border-white/20 animate-pulse">
                 <div className="text-white text-4xl font-bold mb-2">👈</div>
@@ -690,12 +572,7 @@ export default function HomePage() {
                   Chọn một mốc thời gian để bắt đầu hành trình
                 </p>
                 <p className="text-gray-300 text-sm mt-4">
-                  Nhạc nền sẽ tự động phát sau 1 giây không tương tác
-                  <br />
-                  <span className="text-amber-300 mt-2 inline-block">
-                    <Volume2 className="inline w-4 h-4 mr-1" />
-                    Có thể chỉnh âm lượng ở góc phải trên cùng
-                  </span>
+                  Nhạc nền sẽ tự động phát sau khi bạn tương tác
                 </p>
               </div>
             </div>
@@ -703,7 +580,6 @@ export default function HomePage() {
         )}
       </div>
 
-      {/* Global Styles */}
       <style jsx global>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -730,29 +606,6 @@ export default function HomePage() {
         
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #d97706, #b91c1c);
-        }
-        
-        /* Custom range slider styles */
-        input[type="range"]::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          height: 20px;
-          width: 20px;
-          border-radius: 50%;
-          background: linear-gradient(to right, #f59e0b, #dc2626);
-          border: 2px solid #fbbf24;
-          cursor: pointer;
-          box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-        }
-        
-        input[type="range"]::-moz-range-thumb {
-          height: 20px;
-          width: 20px;
-          border-radius: 50%;
-          background: linear-gradient(to right, #f59e0b, #dc2626);
-          border: 2px solid #fbbf24;
-          cursor: pointer;
-          box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
         }
       `}</style>
     </div>
