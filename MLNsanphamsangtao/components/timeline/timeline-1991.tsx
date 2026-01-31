@@ -19,7 +19,6 @@ interface TimelineEvent {
 }
 
 const DATA_1991: TimelineEvent[] = [
- const DATA_HE_THONG_LY_LUAN: TimelineEvent[] = [
   {
     date: 'PHẦN 1',
     title: 'BỐI CẢNH LỊCH SỬ – CHÍNH TRỊ',
