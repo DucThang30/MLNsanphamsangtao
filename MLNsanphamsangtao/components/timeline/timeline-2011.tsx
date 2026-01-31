@@ -73,11 +73,6 @@ Trong giai đoạn này, vai trò của Nhà nước pháp quyền XHCN được
         type: 'image', 
         src: 'https://media.thanhtra.com.vn/public/data/images/0/2024/09/24/nguyennhuan/gb.jpg?w=600&h=400', 
         caption: 'hoạt động thanh tra, kiểm tra pháp luật, chiến dịch phòng, chống tham nhũng' 
-      },
-      { 
-        type: 'video', 
-        src: 'aC9d8eBq5Re', 
-        caption: 'Việt Nam hội nhập: Hành trình 2011-2015' 
       }
     ]
   },
