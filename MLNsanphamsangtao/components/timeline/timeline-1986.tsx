@@ -32,7 +32,7 @@ const DATA_1986: TimelineEvent[] = [
     media: [
        { 
         type: 'image', 
-        src: 'https://cafefcdn.com/203337114487263232/2025/8/27/anh-1-1756263646237-1756263646594875433795.jpgg', 
+        src: 'https://cafefcdn.com/203337114487263232/2025/8/27/anh-1-1756263646237-1756263646594875433795.jpg', 
         caption: 'Người dân quy đổi sang gạo để làm vật tích trữ ' 
       }
     ]
