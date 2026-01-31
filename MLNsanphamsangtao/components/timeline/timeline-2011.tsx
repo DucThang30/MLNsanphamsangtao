@@ -23,25 +23,20 @@ const DATA_2011: TimelineEvent[] = [
     date: '2011 – 2013',
     title: 'Bối Cảnh Mới Và Yêu Cầu Đổi Mới Thể Chế',
     content: `Năm 2011 đánh dấu thời điểm Việt Nam bước sang một giai đoạn phát triển mới của thời kỳ quá độ lên chủ nghĩa xã hội. Sau hơn 25 năm đổi mới, đất nước đã đạt được nhiều thành tựu quan trọng về kinh tế – xã hội, thoát khỏi tình trạng kém phát triển, đồng thời hội nhập ngày càng sâu rộng vào nền kinh tế thế giới.
-
 Trong bối cảnh đó, theo lý luận Chủ nghĩa xã hội khoa học, khi lực lượng sản xuất phát triển ở trình độ cao hơn và các quan hệ xã hội trở nên đa dạng, phức tạp, thì việc quản lý xã hội bằng pháp luật và hoàn thiện thể chế chính trị trở thành yêu cầu tất yếu. Thực tiễn đặt ra đòi hỏi Nhà nước không chỉ điều hành kinh tế mà còn phải bảo đảm dân chủ, công bằng xã hội và ổn định chính trị.
-
-Giai đoạn 2011–2013 vì vậy được xem là giai đoạn định hình tư duy xây dựng Nhà nước pháp quyền xã hội chủ nghĩa, chuẩn bị cơ sở lý luận và thực tiễn cho những cải cách thể chế sâu rộng trong các giai đoạn tiếp theo.`,
+Giai đoạn 2011–2013 vì vậy được xem là giai đoạn định hình tư duy xây dựng Nhà nước pháp quyền xã hội chủ nghĩa, chuẩn bị cơ sở lý luận và thực tiễn cho những cải cách thể chế sâu rộng trong các giai đoạn tiếp theo.
+Video giới thiệu những nội dung cơ bản và đổi mới quan trọng của Hiến pháp 2013 – nền tảng pháp lý cho Nhà nước pháp quyền XHCN.
+`,
     media: [
       { 
         type: 'image', 
-        src: 'https://media.vneconomy.vn/images/upload/2021/01/12/dai-hoi-dang-xi.jpg', 
-        caption: 'Đại hội XI (2011) - Định hướng phát triển mới của đất nước' 
-      },
-      { 
-        type: 'image', 
-        src: 'https://file3.qdnd.vn/data/images/0/2021/01/12/upload_1599/dai-hoi-xi-1.jpg', 
-        caption: 'Tổng Bí thư Nguyễn Phú Trọng phát biểu tại Đại hội XI' 
+        src: 'https://i.ex-cdn.com/nongnghiepmoitruong.vn/files/content/2025/05/05/bieu-quyet-o-quoc-hoi-edited-1739930784932jpeg-083604_215-085819.jpg', 
+        caption: 'Phiên họp Quốc hội thông qua Hiến pháp 2013' 
       },
       { 
         type: 'video', 
-        src: 'yA7d7gBq3Pc', 
-        caption: 'Phim tài liệu: Dấu ấn Đại hội XI - Tầm nhìn mới' 
+        src: 'jDMeEJp9o7U', 
+        caption: 'Giới thiệu Hiến pháp 2013' 
       }
     ]
   },
@@ -49,27 +44,15 @@ Giai đoạn 2011–2013 vì vậy được xem là giai đoạn định hình t
     date: '2013',
     title: 'Hiến Pháp 2013 – Nền Tảng Pháp Lý Của Nhà Nước Pháp Quyền XHCN',
     content: `Năm 2013, Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam được thông qua, đánh dấu một bước phát triển quan trọng trong quá trình hoàn thiện thể chế chính trị ở Việt Nam. Hiến pháp năm 2013 đã chính thức hiến định bản chất của Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam là Nhà nước của Nhân dân, do Nhân dân và vì Nhân dân, qua đó khẳng định rõ quyền lực nhà nước thuộc về Nhân dân và được thực hiện thông qua hệ thống pháp luật.
-
-Theo quan điểm của Chủ nghĩa xã hội khoa học, Nhà nước trong thời kỳ quá độ lên chủ nghĩa xã hội không chỉ giữ vai trò là công cụ quản lý xã hội mà còn là nhân tố tổ chức, định hướng và thúc đẩy sự phát triển xã hội theo con đường xã hội chủ nghĩa. Hiến pháp năm 2013 đã cụ thể hóa vai trò đó bằng việc đề cao và bảo đảm quyền con người, quyền và nghĩa vụ cơ bản của công dân, đồng thời xác lập nguyên tắc quyền lực nhà nước là thống nhất nhưng có sự phân công, phối hợp và kiểm soát giữa các cơ quan trong bộ máy nhà nước.
-
-Bên cạnh đó, Hiến pháp cũng khẳng định vị trí trung tâm của pháp luật trong quản lý xã hội, góp phần xây dựng nền dân chủ xã hội chủ nghĩa ngày càng hoàn thiện.
-
-Với những nội dung mang tính nền tảng đó, giai đoạn 2013–2016 được xem là giai đoạn đặt cơ sở pháp lý quan trọng cho việc xây dựng và vận hành Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam trong thời kỳ mới.`,
+Theo quan điểm của Chủ nghĩa xã hội khoa học, Nhà nước trong thời kỳ quá độ lên chủ nghĩa xã hội không chỉ giữ vai trò là công cụ quản lý xã hội mà còn là nhân tố tổ chức, định hướng và thúc đẩy sự phát triển xã hội theo con đường xã hội chủ nghĩa. Hiến pháp năm 2013 đã cụ thể hóa vai trò đó bằng việc đề cao và bảo đảm quyền con người, quyền và nghĩa vụ cơ bản của công dân, đồng thời xác lập nguyên tắc quyền lực nhà nước là thống nhất nhưng có sự phân công, phối hợp và kiểm soát giữa các cơ quan trong bộ máy nhà nước. Bên cạnh đó, Hiến pháp cũng khẳng định vị trí trung tâm của pháp luật trong quản lý xã hội, góp phần xây dựng nền dân chủ xã hội chủ nghĩa ngày càng hoàn thiện.
+Với những nội dung mang tính nền tảng đó, giai đoạn 2013–2016 được xem là giai đoạn đặt cơ sở pháp lý quan trọng cho việc xây dựng và vận hành Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam trong thời kỳ mới.
+ Video tổng quan về Hiến pháp Việt Nam, lịch sử hiến pháp và vai trò hiến pháp trong xây dựng Nhà nước pháp quyền
+`,
     media: [
       { 
-        type: 'image', 
-        src: 'https://media.vneconomy.vn/images/upload/2013/11/28/hien-phap-2013.jpg', 
-        caption: 'Hiến pháp 2013 - Nền tảng pháp lý của Nhà nước pháp quyền XHCN' 
-      },
-      { 
-        type: 'image', 
-        src: 'https://file3.qdnd.vn/data/images/0/2013/11/28/upload_1456/quoc-hoi-thong-qua-hien-phap.jpg', 
-        caption: 'Quốc hội thông qua Hiến pháp 2013' 
-      },
-      { 
         type: 'video', 
-        src: 'zB8c9dCq4Qd', 
-        caption: 'Toàn cảnh Đại hội Đảng lần thứ XI' 
+        src: 'MtPR4JDzcJ8', 
+        caption: 'Hiến pháp Việt Nam - xây dựng Nhà nước của dân, do dân và vì dân' 
       }
     ]
   },
@@ -77,20 +60,19 @@ Với những nội dung mang tính nền tảng đó, giai đoạn 2013–2016 
     date: '2016 – 2020',
     title: 'Cải Cách Bộ Máy Nhà Nước Và Phòng, Chống Tham Nhũng',
     content: `Từ năm 2016, quá trình hoàn thiện thể chế xã hội chủ nghĩa được đẩy mạnh thông qua cải cách tổ chức bộ máy nhà nước và tăng cường phòng, chống tham nhũng. Đây là yêu cầu khách quan xuất phát từ thực tiễn phát triển kinh tế thị trường định hướng xã hội chủ nghĩa, nơi tồn tại nhiều thành phần kinh tế đan xen.
-
 Theo lý luận CNXH khoa học, để bảo đảm bản chất xã hội chủ nghĩa, Nhà nước phải hoạt động liêm chính, hiệu lực và hiệu quả, đặt lợi ích của Nhân dân lên trên hết. Vì vậy, việc tinh gọn bộ máy, cải cách hành chính và đấu tranh chống tham nhũng không chỉ mang ý nghĩa quản lý mà còn mang ý nghĩa bảo vệ bản chất của chế độ xã hội chủ nghĩa.
-
-Trong giai đoạn này, vai trò của Nhà nước pháp quyền XHCN được thể hiện rõ thông qua việc tăng cường kỷ cương pháp luật, củng cố niềm tin của Nhân dân và tạo môi trường ổn định cho phát triển kinh tế – xã hội.`,
+Trong giai đoạn này, vai trò của Nhà nước pháp quyền XHCN được thể hiện rõ thông qua việc tăng cường kỷ cương pháp luật, củng cố niềm tin của Nhân dân và tạo môi trường ổn định cho phát triển kinh tế – xã hội.
+`,
     media: [
       { 
         type: 'image', 
-        src: 'https://media.vneconomy.vn/images/upload/2020/12/15/cai-cach-bo-may-nha-nuoc.jpg', 
-        caption: 'Cải cách bộ máy nhà nước giai đoạn 2016-2020' 
+        src: 'https://bcp.cdnchinhphu.vn/334894974524682240/2022/10/13/img0671-16656254057851714890667.jpg', 
+        caption: ' Họp Chính phủ, tiếp xúc cử tri' 
       },
       { 
         type: 'image', 
-        src: 'https://file3.qdnd.vn/data/images/0/2020/12/15/upload_1890/phong-chong-tham-nhung.jpg', 
-        caption: 'Đấu tranh phòng, chống tham nhũng' 
+        src: 'https://media.thanhtra.com.vn/public/data/images/0/2024/09/24/nguyennhuan/gb.jpg?w=600&h=400', 
+        caption: 'hoạt động thanh tra, kiểm tra pháp luật, chiến dịch phòng, chống tham nhũng' 
       },
       { 
         type: 'video', 
@@ -103,25 +85,16 @@ Trong giai đoạn này, vai trò của Nhà nước pháp quyền XHCN được
     date: '2021 – Nay',
     title: 'Hoàn Thiện Nhà Nước Pháp Quyền XHCN Gắn Với Tầm Nhìn Phát Triển Dài Hạn',
     content: `Từ năm 2021 đến nay, Việt Nam bước vào giai đoạn hoàn thiện Nhà nước pháp quyền xã hội chủ nghĩa theo hướng hiện đại, gắn với Chiến lược phát triển kinh tế – xã hội giai đoạn 2021–2030 và tầm nhìn phát triển đất nước đến năm 2045. Đây là giai đoạn thể hiện rõ sự chuyển dịch từ yêu cầu phát triển kinh tế đơn thuần sang yêu cầu phát triển toàn diện, bền vững trên nền tảng thể chế chính trị và pháp luật ngày càng hoàn thiện.
-
-Mô hình Nhà nước pháp quyền xã hội chủ nghĩa của Việt Nam ngày càng khẳng định được tính ưu việt trong việc kết hợp giữa nguyên tắc pháp quyền với định hướng xã hội chủ nghĩa, tạo điều kiện để phát huy quyền làm chủ của nhân dân, đồng thời bảo đảm sự ổn định chính trị và phát triển bền vững của đất nước.
-
-Đây cũng là giai đoạn mà Việt Nam tiếp tục khẳng định con đường phát triển độc lập, tự chủ, vừa phát huy nội lực, vừa tích cực hội nhập quốc tế sâu rộng, phấn đấu trở thành nước phát triển, có thu nhập cao vào năm 2045 như mục tiêu đã đề ra.`,
+Theo quan điểm của Chủ nghĩa xã hội khoa học, đây là bước phát triển tất yếu của thời kỳ quá độ lên chủ nghĩa xã hội, khi nhiệm vụ trung tâm của Nhà nước không chỉ dừng lại ở việc thúc đẩy tăng trưởng kinh tế mà còn tập trung vào hoàn thiện thể chế, phát huy dân chủ xã hội chủ nghĩa, đồng thời bảo đảm và bảo vệ quyền con người, quyền công dân. Trong bối cảnh đó, Nhà nước pháp quyền xã hội chủ nghĩa được xác định là công cụ quan trọng để tổ chức, quản lý và định hướng sự phát triển xã hội theo đúng mục tiêu xã hội chủ nghĩa.
+Trọng tâm của giai đoạn này được thể hiện thông qua việc xây dựng Nhà nước pháp quyền xã hội chủ nghĩa hoạt động ngày càng hiệu lực, hiệu quả; tiếp tục hoàn thiện hệ thống pháp luật theo hướng đồng bộ, thống nhất và khả thi; phát huy vai trò giám sát của Nhân dân và các tổ chức chính trị – xã hội trong quản lý nhà nước; đồng thời gắn việc thực thi pháp quyền với quá trình chuyển đổi số và hội nhập quốc tế sâu rộng. Những định hướng này tạo nền tảng chính trị – pháp lý vững chắc, góp phần đưa Việt Nam phát triển ổn định và tiến từng bước vững chắc trên con đường đi lên chủ nghĩa xã hội.
+Từ năm 2011 đến nay, quá trình hoàn thiện thể chế xã hội chủ nghĩa ở Việt Nam là sự tiếp nối và phát triển của con đường quá độ gián tiếp lên chủ nghĩa xã hội, phù hợp với lý luận Chủ nghĩa xã hội khoa học và điều kiện thực tiễn của đất nước. Qua từng giai đoạn, Nhà nước pháp quyền xã hội chủ nghĩa ngày càng được hoàn thiện, góp phần bảo đảm ổn định chính trị, phát triển kinh tế và nâng cao đời sống Nhân dân.
+`,
     media: [
-      { 
-        type: 'image', 
-        src: 'https://media.vneconomy.vn/images/upload/2023/04/27/vietnam-economy-growth.jpg', 
-        caption: 'Việt Nam 2045 - Tầm nhìn phát triển dài hạn' 
-      },
-      { 
-        type: 'image', 
-        src: 'https://file3.qdnd.vn/data/images/0/2022/12/29/upload_1987/digital-vietnam.jpg', 
-        caption: 'Chuyển đổi số và hội nhập quốc tế' 
-      },
+      
       { 
         type: 'video', 
-        src: 'dF2h1eEq8Uh', 
-        caption: 'Khát vọng Việt Nam 2045' 
+        src: 'CvS7qu3CK-U', 
+        caption: 'Xây dựng và hoàn thiện Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam' 
       }
     ]
   }
