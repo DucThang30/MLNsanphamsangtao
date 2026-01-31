@@ -7,7 +7,15 @@ import { Timeline1975 } from '@/components/timeline/timeline-1975';
 import { Timeline1986 } from '@/components/timeline/timeline-1986';
 import { Timeline1991 } from '@/components/timeline/timeline-1991';
 import { Timeline2011 } from '@/components/timeline/timeline-2011';
-import { ChevronRight, Star, Quote, History, Volume2, VolumeX, Home, Menu, X } from 'lucide-react';
+import { ChevronRight, Star, Quote, History, Volume2, VolumeX, Home, Menu, X, Volume, Volume1, VolumeOff } from 'lucide-react';
+
+// Khai báo type cho YouTube API
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
 
 // Dữ liệu timeline với nhạc nền phù hợp từng giai đoạn
 const TIMELINE_YEARS = [
@@ -16,8 +24,8 @@ const TIMELINE_YEARS = [
     label: '1945', 
     title: 'ĐỘC LẬP', 
     sub: 'Khai sinh nước VNDCCH',
-    bgImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/H%E1%BB%93_Ch%C3%AD_Minh_1946.jpg/1280px-H%E1%BB%93_Ch%C3%AD_Minh_1946.jpg',
-    musicId: '0J0lwj4HBAuSAGeFZ5WlaE', // Nhạc cách mạng Việt Nam
+    bgImage: 'https://vn1.vdrive.vn/alohamedia.vn/2025/06/Y-nghia-lich-su-to-lon-cua-Cach-mang-thang-8.jpg',
+    musicId: 'CqC-QMjgsmo',
     color: 'from-red-900 via-amber-800 to-red-950'
   },
   { 
@@ -25,8 +33,8 @@ const TIMELINE_YEARS = [
     label: '1954', 
     title: 'ĐIỆN BIÊN', 
     sub: 'Lừng lẫy năm châu',
-    bgImage: 'https://upload.wikimedia.org/wikipedia/commons/2/22/Castries_de_h%C3%A2m.jpg',
-    musicId: '6GhVJ_lcRjQ', // Hò kéo pháo
+    bgImage: 'https://file3.qdnd.vn/data/images/0/2022/04/23/tvtuongvy/chien%20thang%20dien%20bien%20phu.jpg?dpi=150&quality=100&w=870',
+    musicId: 'kN82zGrllss',
     color: 'from-green-900 via-emerald-800 to-green-950'
   },
   { 
@@ -34,8 +42,8 @@ const TIMELINE_YEARS = [
     label: '1975', 
     title: 'THỐNG NHẤT', 
     sub: 'Non sông thu về một mối',
-    bgImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tank_390_crashing_through_the_gates_of_the_Independence_Palace.jpg/1024px-Tank_390_crashing_through_the_gates_of_the_Independence_Palace.jpg',
-    musicId: 'n-ixwAqMp_w', // Như có Bác trong ngày vui đại thắng
+    bgImage: 'https://file.qdnd.vn/data/images/0/2020/04/29/xuandung/3004dung2.jpg?dpi=150&quality=100&w=575',
+    musicId: 'W7UQWrwEORM',
     color: 'from-blue-900 via-sky-800 to-blue-950'
   },
   { 
@@ -43,8 +51,8 @@ const TIMELINE_YEARS = [
     label: '1986', 
     title: 'ĐỔI MỚI', 
     sub: 'Kỷ nguyên hội nhập',
-    bgImage: 'https://cafefcdn.com/2019/3/13/photo-1-15524456570391282216597.jpg',
-    musicId: 'hN_faFbOSGA', // Bài ca người thợ mỏ
+    bgImage: 'https://vnanet.vn/Data/Articles/2021/01/19/5242223/vna_potal_dai_hoi_lan_thu_vi_cua_dang_khoi_xuong_va_lanh_dao_su_nghiep_doi_moi_dat_nuoc_stand.jpg',
+    musicId: 'CU06sThnFz0',
     color: 'from-purple-900 via-violet-800 to-purple-950'
   },
   { 
@@ -52,8 +60,8 @@ const TIMELINE_YEARS = [
     label: '1991', 
     title: 'CƯƠNG LĨNH', 
     sub: 'Xây dựng đất nước',
-    bgImage: 'https://dangcongsan.vn/DATA/0/2015/12/28/Dangcongsan/dhoi_7_vn_s_b_w-16_01_35_812.jpg',
-    musicId: 'U_6GlkCTi8Q', // Việt Nam quê hương tôi
+    bgImage: 'https://camau.gov.vn/Datafiles/camau-gov-vn/wps/wcm/connect/8154feb5-57b5-45a0-bf81-7b52c5dc7cb9/1/314-jpg-3fmod-3dajperes-26amp-3bcvid-3d.png',
+    musicId: 'BQ_c-HsOWX4',
     color: 'from-pink-900 via-rose-800 to-pink-950'
   },
   { 
@@ -61,31 +69,45 @@ const TIMELINE_YEARS = [
     label: '2011', 
     title: 'PHÁT TRIỂN', 
     sub: 'Công nghiệp hóa',
-    bgImage: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Landmark_81_view_from_Saigon_Bridge_2020.jpg',
-    musicId: 'kOoM7jlfhSA', // Khát vọng
+    bgImage: 'https://hdll.vn/FileUpload/Images/scale_xxx_vesak.jpg',
+    musicId: '8gvtAeGTNZQ',
     color: 'from-teal-900 via-cyan-800 to-teal-950'
   },
 ];
 
-export default function Home() {
+export default function HomePage() {
   const [activeYear, setActiveYear] = useState<number | null>(null);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [showTimeline, setShowTimeline] = useState(false);
   const [isExpandedView, setIsExpandedView] = useState(true);
+  const [showVolumeControl, setShowVolumeControl] = useState(false);
+  const [volume, setVolume] = useState(30);
   const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
   const playerRef = useRef<any>(null);
-  const inactivityTimerRef = useRef<NodeJS.Timeout>();
+  const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
   const currentInfo = TIMELINE_YEARS.find(i => i.year === activeYear) || TIMELINE_YEARS[0];
 
   // YouTube Player API
   useEffect(() => {
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+    // Kiểm tra nếu API đã được load
+    if (window.YT) {
+      initYouTubePlayer();
+    } else {
+      // Load YouTube API
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      if (firstScriptTag.parentNode) {
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      }
+      
+      window.onYouTubeIframeAPIReady = initYouTubePlayer;
+    }
 
-    window.onYouTubeIframeAPIReady = () => {
-      playerRef.current = new YT.Player('youtube-player', {
+    function initYouTubePlayer() {
+      if (typeof window.YT === 'undefined') return;
+      
+      playerRef.current = new window.YT.Player('youtube-player', {
         height: '0',
         width: '0',
         videoId: currentInfo.musicId,
@@ -102,14 +124,23 @@ export default function Home() {
         },
         events: {
           onReady: (event: any) => {
-            event.target.setVolume(30);
+            event.target.setVolume(volume);
           },
+          onStateChange: (event: any) => {
+            // Xử lý khi video kết thúc
+            if (event.data === window.YT.PlayerState.ENDED) {
+              event.target.playVideo();
+            }
+          }
         },
       });
-    };
+    }
 
     return () => {
-      if (playerRef.current) {
+      if (inactivityTimerRef.current) {
+        clearInterval(inactivityTimerRef.current);
+      }
+      if (playerRef.current && playerRef.current.destroy) {
         playerRef.current.destroy();
       }
     };
@@ -134,6 +165,7 @@ export default function Home() {
     return () => {
       if (inactivityTimerRef.current) {
         clearInterval(inactivityTimerRef.current);
+        inactivityTimerRef.current = null;
       }
     };
   }, [lastInteractionTime, isExpandedView, isMusicPlaying]);
@@ -150,15 +182,16 @@ export default function Home() {
     }
   }, [currentInfo.musicId, isMusicPlaying]);
 
+  // Cập nhật âm lượng
+  useEffect(() => {
+    if (playerRef.current && playerRef.current.setVolume) {
+      playerRef.current.setVolume(volume);
+    }
+  }, [volume]);
+
   // Xử lý tương tác người dùng
   const handleUserInteraction = () => {
     setLastInteractionTime(Date.now());
-    if (isMusicPlaying) {
-      setIsMusicPlaying(false);
-      if (playerRef.current && playerRef.current.pauseVideo) {
-        playerRef.current.pauseVideo();
-      }
-    }
   };
 
   const handleYearSelect = (year: number) => {
@@ -177,16 +210,31 @@ export default function Home() {
 
   const toggleMusic = () => {
     handleUserInteraction();
-    if (isMusicPlaying) {
-      if (playerRef.current && playerRef.current.pauseVideo) {
+    if (playerRef.current) {
+      if (isMusicPlaying) {
         playerRef.current.pauseVideo();
-      }
-    } else {
-      if (playerRef.current && playerRef.current.playVideo) {
+        setIsMusicPlaying(false);
+      } else {
         playerRef.current.playVideo();
+        setIsMusicPlaying(true);
       }
     }
-    setIsMusicPlaying(!isMusicPlaying);
+  };
+
+  const toggleVolumeControl = () => {
+    setShowVolumeControl(!showVolumeControl);
+    handleUserInteraction();
+  };
+
+  const handleVolumeChange = (newVolume: number) => {
+    setVolume(newVolume);
+    handleUserInteraction();
+  };
+
+  const getVolumeIcon = () => {
+    if (volume === 0) return <VolumeOff size={20} />;
+    if (volume < 50) return <Volume1 size={20} />;
+    return <Volume2 size={20} />;
   };
 
   const renderTimelineContent = () => {
@@ -213,6 +261,81 @@ export default function Home() {
       
       {/* Control Bar */}
       <div className="fixed top-6 right-6 z-50 flex items-center gap-4">
+        {/* Volume Control Container */}
+        <div className="relative">
+          {/* Volume Slider */}
+          {showVolumeControl && (
+            <div className="absolute bottom-full right-0 mb-3 animate-in fade-in slide-in-from-top-2 duration-300">
+              <div className="bg-black/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-4 shadow-2xl">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm text-gray-300 font-medium">Âm lượng</span>
+                  <span className="text-xs text-amber-400 bg-amber-900/30 px-2 py-1 rounded">
+                    {volume}%
+                  </span>
+                </div>
+                
+                <div className="w-48">
+                  {/* Volume Slider */}
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={volume}
+                    onChange={(e) => handleVolumeChange(parseInt(e.target.value))}
+                    className="w-full h-2 bg-gradient-to-r from-gray-700 to-gray-900 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gradient-to-r [&::-webkit-slider-thumb]:from-amber-500 [&::-webkit-slider-thumb]:to-red-500 [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-amber-300"
+                  />
+                  
+                  {/* Volume Markers */}
+                  <div className="flex justify-between mt-2 px-1">
+                    {[0, 25, 50, 75, 100].map((mark) => (
+                      <div key={mark} className="flex flex-col items-center">
+                        <div className={`w-1 h-2 rounded-full ${volume >= mark ? 'bg-amber-400' : 'bg-gray-600'}`} />
+                        <span className={`text-xs mt-1 ${volume >= mark ? 'text-amber-400' : 'text-gray-500'}`}>
+                          {mark === 100 ? 'MAX' : mark}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Quick Volume Buttons */}
+                  <div className="flex gap-2 mt-4">
+                    {[0, 30, 70, 100].map((level) => (
+                      <button
+                        key={level}
+                        onClick={() => handleVolumeChange(level)}
+                        className={`flex-1 py-2 rounded-lg text-xs font-medium transition-all ${
+                          volume === level
+                            ? 'bg-gradient-to-r from-amber-600 to-red-600 text-white'
+                            : 'bg-gray-800/50 hover:bg-gray-700/70 text-gray-300'
+                        }`}
+                      >
+                        {level === 0 ? 'Tắt' : level === 100 ? 'Max' : `${level}%`}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Arrow */}
+              <div className="absolute -bottom-1 right-6 w-3 h-3 bg-black/80 border-b border-r border-gray-700/50 transform rotate-45"></div>
+            </div>
+          )}
+          
+          {/* Volume Toggle Button */}
+          <button
+            onClick={toggleVolumeControl}
+            className={`p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
+              volume > 0
+                ? 'bg-amber-900/30 border-amber-500/50 text-amber-300 hover:bg-amber-900/50' 
+                : 'bg-gray-900/30 border-gray-500/50 text-gray-400 hover:bg-gray-900/50'
+            }`}
+            title="Chỉnh âm lượng"
+          >
+            {getVolumeIcon()}
+          </button>
+        </div>
+        
+        {/* Play/Pause Button */}
         <button
           onClick={toggleMusic}
           className={`p-3 rounded-full backdrop-blur-md border transition-all duration-300 hover:scale-110 ${
@@ -220,11 +343,12 @@ export default function Home() {
               ? 'bg-green-900/30 border-green-500/50 text-green-300 hover:bg-green-900/50' 
               : 'bg-red-900/30 border-red-500/50 text-red-300 hover:bg-red-900/50'
           }`}
-          title={isMusicPlaying ? "Tắt nhạc nền" : "Bật nhạc nền"}
+          title={isMusicPlaying ? "Tạm dừng nhạc" : "Tiếp tục nhạc"}
         >
           {isMusicPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
         </button>
         
+        {/* Home Button */}
         {showTimeline && (
           <button
             onClick={handleBackToHome}
@@ -235,6 +359,7 @@ export default function Home() {
           </button>
         )}
         
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setShowTimeline(!showTimeline)}
           className="p-3 rounded-full backdrop-blur-md bg-gray-900/30 border border-gray-500/50 text-gray-300 hover:bg-gray-900/50 hover:scale-110 transition-all duration-300 lg:hidden"
@@ -246,15 +371,35 @@ export default function Home() {
 
       {/* Music Status Indicator */}
       {isMusicPlaying && (
-        <div className="fixed top-6 left-6 z-50">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/30 backdrop-blur-md border border-green-500/30">
+        <div className="fixed top-6 left-6 z-50 animate-in fade-in slide-in-from-left duration-300">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/30 backdrop-blur-md border border-green-500/30 shadow-lg">
             <div className="flex gap-1">
               <div className="w-1 h-4 bg-green-400 animate-pulse" style={{animationDelay: '0ms'}}></div>
               <div className="w-1 h-6 bg-green-400 animate-pulse" style={{animationDelay: '100ms'}}></div>
               <div className="w-1 h-3 bg-green-400 animate-pulse" style={{animationDelay: '200ms'}}></div>
               <div className="w-1 h-5 bg-green-400 animate-pulse" style={{animationDelay: '300ms'}}></div>
             </div>
-            <span className="text-xs text-green-300">Nhạc nền</span>
+            <div className="text-xs">
+              <span className="text-green-300 font-medium">Đang phát</span>
+              <span className="text-gray-400 ml-2">{volume}%</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Volume Level Indicator (Shows briefly when changing volume) */}
+      {showVolumeControl && (
+        <div className="fixed top-24 right-6 z-50 animate-in fade-in duration-300">
+          <div className="px-4 py-2 rounded-full bg-black/50 backdrop-blur-md border border-amber-500/30">
+            <div className="flex items-center gap-2">
+              <div className={`w-3 h-3 rounded-full ${
+                volume > 50 ? 'bg-green-500 animate-pulse' : 
+                volume > 0 ? 'bg-yellow-500' : 'bg-gray-500'
+              }`} />
+              <span className="text-sm text-amber-300 font-medium">
+                Âm lượng: <span className="text-white">{volume}%</span>
+              </span>
+            </div>
           </div>
         </div>
       )}
@@ -475,12 +620,19 @@ export default function Home() {
                       </h2>
                     </div>
                     
-                    {/* Music Info */}
-                    <div className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-amber-200">
+                    {/* Music Info with Volume */}
+                    <div className="hidden lg:flex items-center gap-3 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-amber-200">
                       <div className={`w-2 h-2 rounded-full ${isMusicPlaying ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}`} />
-                      <span className="text-sm text-gray-700">
-                        {isMusicPlaying ? 'Đang phát nhạc nền' : 'Nhạc tạm dừng'}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-700">
+                          {isMusicPlaying ? 'Nhạc đang phát' : 'Nhạc tạm dừng'}
+                        </span>
+                        <div className="w-px h-4 bg-gray-300" />
+                        <div className="flex items-center gap-1">
+                          <Volume className="w-3 h-3 text-amber-600" />
+                          <span className="text-xs text-amber-700 font-medium">{volume}%</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -539,6 +691,11 @@ export default function Home() {
                 </p>
                 <p className="text-gray-300 text-sm mt-4">
                   Nhạc nền sẽ tự động phát sau 1 giây không tương tác
+                  <br />
+                  <span className="text-amber-300 mt-2 inline-block">
+                    <Volume2 className="inline w-4 h-4 mr-1" />
+                    Có thể chỉnh âm lượng ở góc phải trên cùng
+                  </span>
                 </p>
               </div>
             </div>
@@ -573,6 +730,29 @@ export default function Home() {
         
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
           background: linear-gradient(to bottom, #d97706, #b91c1c);
+        }
+        
+        /* Custom range slider styles */
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: linear-gradient(to right, #f59e0b, #dc2626);
+          border: 2px solid #fbbf24;
+          cursor: pointer;
+          box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background: linear-gradient(to right, #f59e0b, #dc2626);
+          border: 2px solid #fbbf24;
+          cursor: pointer;
+          box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
         }
       `}</style>
     </div>
