@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, X } from 'lucide-react';
+import { createPortal } from 'react-dom';
 
-// --- CẤU TRÚC DỮ LIỆU ---
 interface MediaItem {
   type: 'image' | 'video';
   src: string;
@@ -48,7 +48,7 @@ Ngay sau khi giành chính quyền, Hồ Chí Minh xác định nhiệm vụ tru
   {
     date: 'Cuối năm 1945',
     title: 'Giải quyết "giặc đói" và "giặc dốt"',
-    content: `Sau khi độc lập, đất nước rơi vào tình trạng khủng hoảng nghiêm trọng. Nạn đói năm 1945 đã làm hơn 2 triệu người chết ở miền Bắc. Trước tình hình đó, Chính phủ phát động phong trào "nhường cơm sẻ áo", kêu gọi mỗi người dân nhịn ăn một bữa để cứu đói đồng bào. Đồng thời, phong trào tăng gia sản xuất được triển khai rộng khắp.
+    content: `Sau khi độc lập, đất nước rơi vào tình trạng khủng hoảng nghiêm trọng. Nạn đói năm 1945 đã làm hơn 2 triệu người chết ở miền Bắc. Trước tình hình đó, Chính phủ phát động phong trào "nhường cơm sẻ áo", kêu gọi mỗi người dân nhịn ăn một bữa để cứu đói đồbào. Đồng thời, phong trào tăng gia sản xuất được triển khai rộng khắp.
 
 Về giáo dục, ngày 8/9/1945, Chủ tịch Hồ Chí Minh ký sắc lệnh thành lập Nha Bình dân học vụ nhằm xóa nạn mù chữ. Hàng triệu người dân đã tham gia học chữ trong những năm đầu của chính quyền cách mạng. Điều này thể hiện quan điểm của Hồ Chí Minh: xây dựng xã hội mới phải bắt đầu từ nâng cao dân trí, phát huy vai trò làm chủ của nhân dân.`,
     media: [
@@ -142,96 +142,142 @@ Giai đoạn này tuy chưa trực tiếp xây dựng chủ nghĩa xã hội, nh
   }
 ];
 
-// --- COMPONENT CHÍNH ---
+// ==================== MODAL COMPONENT DÙNG PORTAL ====================
+function ModalPortal({ media, onClose }: { media: MediaItem; onClose: () => void }) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        onClose();
+      }
+    };
+
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-portal-open');
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscKey);
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-portal-open');
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [onClose]);
+
+  return createPortal(
+    <>
+      <div 
+        className="fixed inset-0 z-[9998] bg-black/95 backdrop-blur-sm animate-fade-in"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
+        <div 
+          ref={modalRef}
+          className="relative w-full max-w-6xl max-h-[90vh] bg-black rounded-2xl overflow-hidden shadow-2xl animate-zoom-in pointer-events-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-50 bg-black/80 hover:bg-black text-white rounded-full p-3 transition-all hover:scale-110 hover:rotate-90"
+            aria-label="Đóng"
+          >
+            <X className="w-6 h-6 md:w-8 md:h-8" />
+          </button>
+          
+          {media.type === 'video' ? (
+            <div className="relative w-full pt-[56.25%]">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src={`https://www.youtube.com/embed/${media.src}?autoplay=1&rel=0&modestbranding=1`}
+                title={media.caption}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <div className="w-full h-[70vh] flex items-center justify-center p-8">
+              <img
+                src={media.src}
+                className="max-w-full max-h-full object-contain rounded-lg"
+                alt={media.caption}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://via.placeholder.com/800x600/333333/cccccc?text=Không+tải+được+ảnh';
+                  target.className = 'max-w-full max-h-full object-contain opacity-60 rounded-lg';
+                }}
+              />
+            </div>
+          )}
+          
+          <div className="bg-gradient-to-t from-black via-black to-transparent px-6 py-4">
+            <p className="text-white text-lg font-semibold text-center">
+              {media.caption}
+            </p>
+            <p className="text-gray-400 text-sm text-center mt-1">
+              {media.type === 'image' ? 'Ảnh' : 'Video'} • 
+              {isMobile ? ' Chạm ra ngoài' : ' Click ra ngoài'} để đóng • Nhấn ESC
+            </p>
+          </div>
+        </div>
+      </div>
+    </>,
+    document.body
+  );
+}
+
+// ==================== COMPONENT CHÍNH ====================
 interface TimelineProps {
   containerRef?: React.RefObject<HTMLDivElement>;
 }
 
 export function Timeline1945({ containerRef }: TimelineProps) {
   const [selectedMedia, setSelectedMedia] = useState<MediaItem | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null);
 
-  /* KIỂM TRA MOBILE */
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Giảm ngưỡng mobile
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedMedia(null);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  /* KHÓA SCROLL VÀ XỬ LÝ ESC KEY - CẬP NHẬT */
-  useEffect(() => {
-    const handleEscKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && selectedMedia) {
-        setSelectedMedia(null);
-      }
-    };
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-        setSelectedMedia(null);
-      }
-    };
-
     if (selectedMedia) {
-      // Khóa scroll
-      document.body.style.overflow = 'hidden';
-      document.documentElement.style.overflow = 'hidden';
-      
-      // Thêm event listeners
-      document.addEventListener('keydown', handleEscKey);
-      document.addEventListener('mousedown', handleClickOutside);
-      
-      // Thêm class để nhận biết modal đang mở
-      document.body.classList.add('modal-open');
-    } else {
-      // Mở lại scroll
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-      
-      // Xóa event listeners
-      document.removeEventListener('keydown', handleEscKey);
-      document.removeEventListener('mousedown', handleClickOutside);
-      
-      // Xóa class
-      document.body.classList.remove('modal-open');
+      document.addEventListener('keydown', handleEsc);
+      return () => document.removeEventListener('keydown', handleEsc);
     }
-
-    return () => {
-      // Cleanup
-      document.body.style.overflow = '';
-      document.documentElement.style.overflow = '';
-      document.removeEventListener('keydown', handleEscKey);
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.body.classList.remove('modal-open');
-    };
   }, [selectedMedia]);
 
   return (
     <>
-      {/* ================= TIMELINE ĐƠN GIẢN ================= */}
-      <div className="space-y-8 relative z-0">
+      <div className="space-y-8">
         <div className="space-y-12">
           {DATA_1945.map((event, idx) => {
             const isShortContent = event.content.split(/\s+/).length < 150;
 
             return (
-              <div key={idx} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 relative z-0">
-                {/* Tiêu đề sự kiện */}
+              <div key={idx} className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-gray-900">
                     {event.date} – {event.title}
                   </h3>
                 </div>
 
-                {/* Nội dung và Media */}
                 <div className={isShortContent ? 'grid grid-cols-1 lg:grid-cols-3 gap-8' : 'space-y-6'}>
-                  {/* Nội dung văn bản */}
                   <div className={isShortContent ? 'lg:col-span-2' : ''}>
                     {event.content.split('\n\n').map((p, i) => (
                       <p key={i} className="mb-4 text-gray-700 text-lg leading-relaxed">
@@ -240,14 +286,13 @@ export function Timeline1945({ containerRef }: TimelineProps) {
                     ))}
                   </div>
 
-                  {/* Media */}
                   {event.media.length > 0 && (
                     <div className="space-y-4">
                       {event.media.map((m, i) => (
-                        <div
+                        <button
                           key={i}
                           onClick={() => setSelectedMedia(m)}
-                          className="cursor-pointer rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative z-0"
+                          className="w-full text-left rounded-xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-red-500"
                         >
                           <div className="aspect-video bg-gray-100 relative">
                             {m.type === 'image' ? (
@@ -261,18 +306,17 @@ export function Timeline1945({ containerRef }: TimelineProps) {
                               <>
                                 <img
                                   src={`https://img.youtube.com/vi/${m.src}/hqdefault.jpg`}
-                                  className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                                  className="w-full h-full object-cover"
                                   alt={m.caption}
                                   loading="lazy"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                  <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                                  <div className="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center">
                                     <Play className="w-7 h-7 text-white ml-1" />
                                   </div>
                                 </div>
                               </>
                             )}
-                            {/* Badge loại media */}
                             <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-2 py-1 rounded">
                               {m.type === 'image' ? 'ẢNH' : 'VIDEO'}
                             </div>
@@ -280,7 +324,7 @@ export function Timeline1945({ containerRef }: TimelineProps) {
                           <div className="p-4 bg-white">
                             <div className="font-semibold text-gray-900">{m.caption}</div>
                           </div>
-                        </div>
+                        </button>
                       ))}
                     </div>
                   )}
@@ -291,73 +335,11 @@ export function Timeline1945({ containerRef }: TimelineProps) {
         </div>
       </div>
 
-      {/* ================= MODAL FULLSCREEN CHÍNH GIỮA ================= */}
       {selectedMedia && (
-        <>
-          {/* Overlay đen full màn hình */}
-          <div 
-            className="fixed inset-0 z-[9998] bg-black/95 backdrop-blur-sm transition-opacity duration-300"
-            onClick={() => setSelectedMedia(null)}
-            aria-hidden="true"
-          />
-          
-          {/* Modal container - CHIẾM TOÀN BỘ MÀN HÌNH */}
-          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-            <div 
-              ref={modalRef}
-              className="relative w-full max-w-6xl max-h-[90vh] bg-black rounded-2xl overflow-hidden shadow-2xl 
-                         animate-in zoom-in duration-300"
-            >
-              {/* Close button */}
-              <button
-                onClick={() => setSelectedMedia(null)}
-                className="absolute top-4 right-4 z-50 bg-black/80 hover:bg-black text-white rounded-full p-3 
-                           transition-all hover:scale-110 hover:rotate-90"
-                aria-label="Đóng"
-              >
-                <X className="w-6 h-6 md:w-8 md:h-8" />
-              </button>
-              
-              {/* Media content */}
-              {selectedMedia.type === 'video' ? (
-                <div className="relative w-full pt-[56.25%]">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${selectedMedia.src}?autoplay=1&rel=0&modestbranding=1`}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <div className="w-full h-[70vh] flex items-center justify-center p-8">
-                  <img
-                    src={selectedMedia.src}
-                    className="max-w-full max-h-full object-contain rounded-lg"
-                    alt={selectedMedia.caption}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://via.placeholder.com/800x600/333333/cccccc?text=Không+tải+được+ảnh';
-                      target.className = 'max-w-full max-h-full object-contain opacity-60 rounded-lg';
-                    }}
-                  />
-                </div>
-              )}
-              
-              {/* Caption */}
-              <div className="bg-gradient-to-t from-black via-black to-transparent px-6 py-4">
-                <p className="text-white text-lg font-semibold text-center">
-                  {selectedMedia.caption}
-                </p>
-                <p className="text-gray-400 text-sm text-center mt-1">
-                  {selectedMedia.type === 'image' ? 'Ảnh' : 'Video'} • 
-                  {isMobile ? ' Chạm ra ngoài' : ' Click ra ngoài'} để đóng • Nhấn ESC
-                </p>
-              </div>
-            </div>
-          </div>
-        </>
+        <ModalPortal 
+          media={selectedMedia} 
+          onClose={() => setSelectedMedia(null)} 
+        />
       )}
     </>
   );
