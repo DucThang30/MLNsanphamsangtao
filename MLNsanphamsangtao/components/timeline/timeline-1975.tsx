@@ -58,7 +58,7 @@ Huế - cố đô của dân tộc được giải phóng, đánh dấu sự s�
     media: [
       { 
         type: 'image', 
-        src: 'https://icdn.dantri.com.vn/k:8b823cd4eb/2015/08/22/2287-74a41/ky-uc-nguoi-keo-ngon-co-cach-mang-dau-tien-tren-dat-hue.jpg', 
+        src: 'http://vcdn1-vnexpress.vnecdn.net/2025/03/25/7-1742828018-1742909840.jpg?w=460&h=0&q=100&dpr=1&fit=crop&s=PJ3Vdg_YfXgzr8ywoQ6H5A', 
         caption: 'Cờ giải phóng tung bay trên Kỳ Đài Huế' 
       },
       { 
@@ -152,7 +152,7 @@ Tổng thống Dương Văn Minh tuyên bố đầu hàng vô điều kiện.
     media: [
       { 
         type: 'image', 
-        src: 'https://cdnphoto.dantri.com.vn/XEnd6V0jN24l7wRjcQW4kMA4918=/zoom/1200_630/2020/04/17/images-13086351-1587098124624.jpg', 
+        src: 'https://static.cand.com.vn/Files/Image/bichthuy/2017/04/28/f837a3f1-a2ab-4fcf-a7db-e5a2df038dc8.jpg', 
         caption: 'Xe tăng 390 húc đổ cổng Dinh Độc Lập' 
       },
       { 
